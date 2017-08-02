@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Projectile Overlay</title>
+		<style>
+			body { margin: 0; }
+
+			#vidCanvas {
+/*				border: 1px solid red;*/
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#compCanvas {
+/*				border: 1px solid red;*/
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#compCanvas2 {
+/*				border: 1px solid red;*/
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#vid {
+				/*border: 1px solid blue;*/
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#text {
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				}
+
+			#notmydiv
+			{
+				position:absolute;
+				padding: 1px;
+				left:0px;
+				top:0px;
+				z-index: 1;
+			}
+
+
+		</style>
+
+	</head>
+
+	<body>
+		<h1 style="text-align: center; font-family: Ariel">Projectile Motion</h1>
+
+		<video id="vid">
+			<source src="projectile1.mp4" type="video/mp4">
+			<source src="projectile1.webm" type="video/webm">
+			This video is not supported by your browser.
+		</video>
+
+		<canvas id="vidCanvas"></canvas>
+		<canvas id="compCanvas"></canvas>
+		<canvas id="compCanvas2"></canvas>
+
+		<div id="notmydiv">
+		<input id="btn" type="button" value="Throw!"  onclick="Run();"/>
+		</div>
+
+		<div id="text" style="text-align: center">
+            
+            <p>This is a demonstration of how projectiles follow a simple parabolic path when thrown, with the velocity in both axes represented by the red arrows. The resultant motion is shown by the black arrow and the blue line traces out the path followed.</p>            <p> The equation that describes the motion is found using the equations for constant acceleration, giving:
+            </p>            <img id="suvat" src = "suvat.png"></img>            <p> This means that the horizontal velocity is a constant (when ignoring air resistance), while the vertical velocity changes linearly with time. This gives a parabola when horizontal and vertical position is plotted, as seen by the blue curve. </p>
+        </div>
+
+
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>-->
+		<script src = "chartMain.js"></script>
+		<!--<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous"></script>-->
+		
+	</body>
+</html>
