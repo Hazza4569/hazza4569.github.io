@@ -2,7 +2,7 @@ var w = 640; var h = 360;
 var vidDone = true;
 var runs = 0;
 
-var colour = 'green';
+var colour = 'hotpink';
 
 var theCanvas = document.getElementById("vidCanvas")
 var ctx = theCanvas.getContext('2d');
@@ -166,7 +166,7 @@ function init()
 function Run()
 {
 	btn.disabled = true;
-	btn.style.backgroundColor = '#ccffcc';
+	btn.style.backgroundColor = '#cccccc';
 	ctx.clearRect(0,0,theCanvas.width,theCanvas.height);
 	v.play();
 	vidDone = false;
