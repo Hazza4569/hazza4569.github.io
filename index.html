@@ -63,6 +63,16 @@
 				top:0px;
 				z-index: 1;
 			}
+			#graph
+			{
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
 
 
 		</style>
@@ -72,7 +82,7 @@
 	<body>
 		<h1 style="text-align: center; font-family: Ariel">Projectile Motion</h1>
 
-		<video id="vid">
+		<video id="vid" preload="auto">
 			<source src="projectile1.mp4" type="video/mp4">
 			<source src="projectile1.webm" type="video/webm">
 			This video is not supported by your browser.
@@ -86,6 +96,9 @@
 		<input id="btn" type="button" value="Throw!"  onclick="Run();"/>
 		</div>
 
+		<div id="graph"></div>
+		<input id="btn1" type="button" value="Graph!" onclick="GRAPHS();"/>
+
 		<div id="text" style="text-align: center">
             
             <p>This is a demonstration of how projectiles follow a simple parabolic path when thrown, with the velocity in both axes represented by the red arrows. The resultant motion is shown by the black arrow and the blue line traces out the path followed.</p>            <p> The equation that describes the motion is found using the equations for constant acceleration, giving:
@@ -93,8 +106,9 @@
         </div>
 
 
-		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>-->
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<link href="http://visjs.org/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+		<script src="http://visjs.org/dist/vis.js"></script>
 		<script src = "chartMain.js"></script>
 		<!--<script
 		  src="https://code.jquery.com/jquery-3.2.1.min.js"
