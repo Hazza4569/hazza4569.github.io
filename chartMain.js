@@ -2,10 +2,12 @@ var w = 640; var h = 360;
 var vidDone = true;
 var runs = 0;
 
+var colour = 'green';
+
 var theCanvas = document.getElementById("vidCanvas")
 var ctx = theCanvas.getContext('2d');
 ctx.lineWidth = 3;
-ctx.strokeStyle = "blue";
+ctx.strokeStyle = colour;
 var v = document.getElementById("vid");
 v.addEventListener('ended',onVidEnd,false);
 
@@ -27,6 +29,12 @@ var graph = document.getElementById("graph");
 var btn2 = document.getElementById("btn2");
 
 var e = document.getElementById("myList");
+
+var axsTime = document.getElementById("time");
+
+var L = document.getElementById("left");
+var R = document.getElementById("right");
+var bkg = document.getElementById("white");
 
 var numPoints = 60;
 
@@ -75,7 +83,7 @@ function init()
 	var btnpad = ((window.innerWidth - btn.clientWidth)/2);
 	var imgpad = (window.innerWidth - suvat.width)/2;
 
-	var cntHeight = 0;
+	var cntHeight = 15;
 
 	v.width = w;
     v.height = h;
@@ -90,11 +98,20 @@ function init()
     comCanvas2.style.height = h;
     comCanvas2.style.padding = toppad.toString() + "px " + pad.toString() + "px";
 
+
+    v.style.top = cntHeight + "px";
+    vidCanvas.style.top = cntHeight + "px";
+    comCanvas.style.top = cntHeight + "px";
+    comCanvas2.style.top = cntHeight + "px";
+
     cntHeight += h + toppad - 5;
     btnDiv.style.top = cntHeight + "px";
     //btnDiv.style.left = pad;
     btnDiv.style.width = pad;
     btnDiv.style.padding = "10px " + pad.toString() + "px";
+
+    btn.style.backgroundColor = colour;
+    //e.style.backgroundColor = colour;
 
     drop.style.top = cntHeight + "px";
     //drop.style.left = pad;
@@ -110,24 +127,33 @@ function init()
 
     cntHeight += 320 + 25;
     txt.style.top = cntHeight + "px";
-    var txtWidth = (0.6*window.innerWidth)
+    var txtWidth = (w);
     txt.style.width = txtWidth.toString() + "px";
-    txt.style.padding = "10px" + (txtWidth).toString + "px";
+    txt.style.padding = "10px " + (pad).toString() + "px";
     //txt.style.left = (0.2*window.innerWidth).toString + "px";
 
-    
+
+    axsTime.style.top = cntHeight+5 + "px";
+    axsTime.style.padding = "20px";
+
+    suvat.style.width = (377*w/640).toString() + "px";
+    suvat.style.height = (165*w/640).toString() + "px";
+    //suvat.style.padding = "0px " + imgpad.toString() + "px";
 
 
+    var rWidth = Math.max(0.8*pad - 10,0)
 
 
+    L.style.width = window.innerWidth + "px";
+    L.style.height = "1300px";
+    L.style.backgroundColor = colour;
 
-
-    suvat.style.width = 377*w/640;
-    suvat.style.height = 165*w/640;
-    suvat.style.padding = "0px " + imgpad.toString() + "px";
+    bkg.style.left = rWidth + "px";
+    bkg.style.width = (window.innerWidth - 2*rWidth).toString() + "px"
+    bkg.style.top = "80px"
+    bkg.style.height = "1200px";
 
     GRAPHS();
-
 
     //vidCanvas.padding = 100;
 
@@ -140,6 +166,7 @@ function init()
 function Run()
 {
 	btn.disabled = true;
+	btn.style.backgroundColor = '#ccffcc';
 	ctx.clearRect(0,0,theCanvas.width,theCanvas.height);
 	v.play();
 	vidDone = false;
@@ -186,13 +213,13 @@ function GRAPHS()
    		y: [[g]],
    		x: [f[0]],
    		mode: 'lines',
-   		line: {color: '#80CAF6'}
+   		line: {color: colour}
    		
 	}], 
 	{
-		margin: {t:10,l:10,r:10,b:20},
+		margin: {t:10,l:20,r:10,b:20},
 		xaxis: {range: [0,320], showticklabels: false,title: 'time'},
-		yaxis: {range: yrange, showticklabels: false},
+		yaxis: {range: yrange, showticklabels: false, title: e.options[e.selectedIndex].value},
 		showlegend: false
 	});
 }
@@ -251,6 +278,7 @@ function arrow(context, fromx, fromy, tox, toy)
 function onVidEnd(e)
 {
 	btn.disabled=false;
+	btn.style.backgroundColor = colour;
 	cty.clearRect(0,0,comCanvas.width,comCanvas.height);
 	ctz.clearRect(0,0,comCanvas2.width,comCanvas2.height);
 }

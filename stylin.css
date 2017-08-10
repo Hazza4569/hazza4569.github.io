@@ -43,9 +43,9 @@ body { margin: 0; }
 			}
 
 			#text {
-				border: 1px solid green;
+				/*border: 1px solid green;*/
 				position:absolute;
-				padding: 100px;
+				/*padding: 100px;*/
 				/*left:0px;*/
 				/*top:0px;*/
 				text-align: center;
@@ -76,7 +76,7 @@ body { margin: 0; }
 
 			#btn
 			{
-				background-color: #4CAF50; /* Green */
+				/*background-color: #80CAF6; /* Green */
     			border: none;
     			color: white;
     			padding: 7px 30px;
@@ -101,5 +101,52 @@ body { margin: 0; }
 
 			#myList
 			{
-				padding:0px;
+				/*padding:0px;*/
+				/*border: none;*/
+    			/*color: white;
+    			padding: 7px 30px;
+    			text-align: center;
+    			text-decoration: none;
+    			/*display: inline-block;
+    			font-size: 16px;*/
+    			font-family: helvetica;
+			}
+
+			#test
+			{
+				position:absolute;
+				
+				width: 100px;
+				height: 100px;
+				z-index:15;
+			}
+
+			#left
+			{
+				/*border:20px solid blue;*/
+				position:absolute;
+				left:0px;
+				top:00px;
+				z-index:-41;
+			}
+
+			#white
+			{
+				position:absolute;
+				background-color:white;
+				z-index:-40;
+			}
+
+			p, label
+			{
+				font-family: helvetica;
+			}
+
+			h1
+			{
+				font-family: helvetica;
+				text-align: center;
+				/*background-color: green;*/
+				color: white;
+				padding: 5px;
 			}
