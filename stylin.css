@@ -128,6 +128,7 @@ body { margin: 0; }
 				left:0px;
 				top:00px;
 				z-index:-41;
+				background-image:url("eqns.jpg");
 			}
 
 			#white
@@ -137,6 +138,14 @@ body { margin: 0; }
 				z-index:-40;
 			}
 
+			#title
+			{
+				position:absolute;
+				background-color:white;
+				display: inline-block;
+				text-align: center;
+			}
+
 			p, label
 			{
 				font-family: helvetica;
@@ -144,9 +153,11 @@ body { margin: 0; }
 
 			h1
 			{
+				margin-top: 10px;
 				font-family: helvetica;
 				text-align: center;
 				/*background-color: green;*/
-				color: white;
-				padding: 5px;
+				/*color: white;*/
+				/*padding: 5px;*/
+				display:inline-block;
 			}

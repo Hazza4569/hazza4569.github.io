@@ -7,7 +7,9 @@
 	</head>
 
 	<body>
-		<h1>Projectile Motion</h1>
+		<div id="title">
+			<h1>Projectile Motion</h1>
+		</div>
 
 		<video id="vid" preload="auto">
 			<source src="projectile1.mp4" type="video/mp4">
@@ -36,8 +38,7 @@
 		<div id="graph"></div>
 		<div id="time"></div>
 
-		<div id="text">
-            
+		<div id="text"> 
             <p>This is a demonstration of how projectiles follow a simple parabolic path when thrown, with the velocity in both axes represented by the red arrows. The resultant motion is shown by the black arrow and the blue line traces out the path followed.</p>            <p> The equation that describes the motion is found using the equations for constant acceleration, giving:
             </p>            <img id="suvat" src = "suvat.png"></img>            <p> This means that the horizontal velocity is a constant (when ignoring air resistance), while the vertical velocity changes linearly with time. This gives a parabola when horizontal and vertical position is plotted, as seen by the blue curve. </p>
         </div>
@@ -46,8 +47,6 @@
         <div id="white"></div>        
 
 		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-		<link href="http://visjs.org/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
-		<script src="http://visjs.org/dist/vis.js"></script>
 		<script src = "chartMain.js"></script>
 		<!--<script
 		  src="https://code.jquery.com/jquery-3.2.1.min.js"
