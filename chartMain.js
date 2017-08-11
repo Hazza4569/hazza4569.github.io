@@ -3,11 +3,13 @@ var vidDone = true;
 var runs = 0;
 
 var colour = 'hotpink';
+window.location.href = "https://hazza4569.github.io/projectiles#col="+colour;
+
 
 var theCanvas = document.getElementById("vidCanvas")
 var ctx = theCanvas.getContext('2d');
 ctx.lineWidth = 3;
-ctx.strokeStyle = colour;
+
 var v = document.getElementById("vid");
 v.addEventListener('ended',onVidEnd,false);
 
@@ -57,11 +59,14 @@ var x,y;
 var vx, vy;
 
 window.addEventListener( 'resize', onWindowResize, false );
+window.addEventListener( 'hashchange', onHashChange, false);
 
 init();
 
 function init()
 {
+    ctx.strokeStyle = colour;
+
 	if (window.innerWidth < 660)
     {
     	w = window.innerWidth - 20;
@@ -285,6 +290,13 @@ function onVidEnd(e)
 
 function onWindowResize() {
     init();
+}
+
+function onHashChange(){
+    var newURL = window.location.href;
+    colour = newURL.substr(44);
+    init();
+    console.log("hash",colour);
 }
 
 function getPoints()
