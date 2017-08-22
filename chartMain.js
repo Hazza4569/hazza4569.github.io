@@ -279,7 +279,7 @@ function GRAPHS()
         xaxis: 'x2',
         yaxis: 'y2',
         mode: 'lines',
-        line: {color: colour},
+        line: {color: colour2},
         showlegend: false
         //name: 'Vertical'
     };
@@ -290,7 +290,7 @@ function GRAPHS()
         mode: 'lines',
         xaxis: 'x2',
         yaxis: 'y2',
-        line: {color: colour2},
+        line: {color: colour},
         showlegend: false
         //name: 'Horizontal'
     };
@@ -301,7 +301,7 @@ function GRAPHS()
         xaxis: 'x3',
         yaxis: 'y3',
         mode: 'lines',
-        line: {color: colour},
+        line: {color: colour2},
         showlegend: false
         //name: 'Vertical'
     };
@@ -312,7 +312,7 @@ function GRAPHS()
         mode: 'lines',
         xaxis: 'x3',
         yaxis: 'y3',
-        line: {color: colour2},
+        line: {color: colour},
         showlegend: false
         //name: 'Horizontal'
     };
