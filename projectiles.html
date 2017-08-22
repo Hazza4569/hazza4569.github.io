@@ -26,22 +26,18 @@
 		</div>
 
 		<div id="drop">
-			<label>Select value to be plotted:</label>
-        	<select id = "myList">
-        	   	<option value = "Y coordinate">Y coordinate</option>
-        	   	<option value = "X coordinate">X coordinate</option>
-        	   	<option value = "Y velocity">Y velocity</option>
-        	   	<option value = "X velocity">X velocity</option>
-        	</select>
 		</div>
 
 		<div id="graph"></div>
 		<div id="time"></div>
 
-		<div id="text"> 
-            <p>This is a demonstration of how projectiles follow a simple parabolic path when thrown, with the velocity in both axes represented by the red arrows. The resultant motion is shown by the black arrow and the blue line traces out the path followed.</p>            <p> The equation that describes the motion is found using the equations for constant acceleration, giving:
-            </p>            <img id="suvat" src = "suvat.png"></img>            <p> This means that the horizontal velocity is a constant (when ignoring air resistance), while the vertical velocity changes linearly with time. This gives a parabola when horizontal and vertical position is plotted, as seen by the blue curve. </p>
-        </div>
+		<div id="text">
+           <p>This is a demonstration of how projectiles follow a simple parabolic path when thrown. Overlayed on top the video upon clicking on analyse, is the cyan line that traces out the path taken by the projectile, red arrows to show horizontal and vertical velocity and a black arrow to show the resultant direction of the velocity.</p>
+           <p>Alongside the visual description overlayed on the video, three graphs are plotted when analyse is clicked. The graphs are of distance, velocity and acceleration all against time with the vertical and horizontal components plotted in different colours on the same graph.</p>
+           <p> The equations that describe the motion are found by calculating the velocity from a constant acceleration and differentiating, giving:</p>
+           <img id="suvat" src = "suvat.png"></img>
+           <p> This means that the horizontal velocity is a constant (when ignoring air resistance), while the vertical velocity changes linearly with time. This gives a parabola when horizontal and vertical position is plotted, as seen on the graph. </p>
+       </div>
 
         <div id="left"></div>
         <div id="white"></div>        

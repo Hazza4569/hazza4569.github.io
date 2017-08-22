@@ -38,6 +38,10 @@ var yscale = 2.4;  //not sure why needed, but couldn't get to work without.
 var arrScale = 35 * numPoints/360; //scale size of velocity arrows
 
 var t = 1; //initialise counter
+var t2 = 0;
+var txtDwn = false;
+var txtStep = 10;
+var txtTop, bkgHeight;
 var x,y; 
 var vx, vy,ax,ay;
 
@@ -119,19 +123,27 @@ function init()
     cntHeight += 45;
     graph.style.top = cntHeight + "px";
 
-    txtInit();
+    txtTop = cntHeight;
+    txt.style.top = (txtTop+t2*txtStep).toString() + "px";
+    var txtWidth = (w);
+    txt.style.width = txtWidth.toString() + "px";
+    txt.style.padding = "10px " + (pad).toString() + "px";
+
+    suvat.style.width = (377*w/640).toString() + "px";
+    suvat.style.height = (165*w/640).toString() + "px";
 
 
     var rWidth = Math.max(0.8*pad - 10,0)
 
     L.style.width = window.innerWidth + "px"; //background div
-    L.style.height = "1300px";
+    L.style.height = "1450px";
     //L.style.backgroundColor = colour;  //can be used to switch to coloured bg instead of picture
 
     bkg.style.left = rWidth + "px";
     bkg.style.width = (window.innerWidth - 2*rWidth).toString() + "px"
     bkg.style.top = "80px"
-    bkg.style.height = "1200px";
+    bkgHeight = 960
+    bkg.style.height = (bkgHeight+t2*txtStep).toString() + "px";
 
     title.style.width="400px";
     title.style.left= (window.innerWidth/2 - 200).toString() + "px";
@@ -139,30 +151,47 @@ function init()
     title.style.height="70px";
     title.style.top="20px";
 
-    //GRAPHS(); //Make graph
+    if (txtDwn){GRAPHS()} //Make graph
 }
 
-function txtInit()
+function txtDown()
 {
-    var pad = ((window.innerWidth-w)/2);
-    cntHeight = 15 + h + 80 - 5 + 45;
+    txtDwn = true;
+    t2 = 0;
+    txtAnim();
+}
 
-    if (btn.disabled) {cntHeight+=340}
-
-    txt.style.top = cntHeight + "px";
-    var txtWidth = (w);
-    txt.style.width = txtWidth.toString() + "px";
-    txt.style.padding = "10px " + (pad).toString() + "px";
-
-    suvat.style.width = (377*w/640).toString() + "px";
-    suvat.style.height = (165*w/640).toString() + "px";
+function txtAnim()
+{
+    if (t2<=340/txtStep)
+    {
+        t2++
+        txt.style.top = (txtTop+t2*txtStep).toString() + "px";
+        bkg.style.height = (bkgHeight+t2*txtStep).toString() + "px";
+        setTimeout(txtAnim,15);
+        
+    }
+    else
+    {
+        analyse();
+    }
 }
 
 function Run()
 {
     if (btn.value=="Analyse")
     {
-        analyse();
+        btn.disabled = true;
+        btn.style.backgroundColor = '#cccccc';
+        if (!txtDwn)
+        {
+            txtDown();
+        }
+        else
+        {
+            Plotly.purge('graph');
+            setTimeout(analyse,5);
+        }
     }
     else
     {
@@ -172,18 +201,16 @@ function Run()
 
 function throwBall()
 {
-    btn.value = "Analyse";
-    ctx.clearRect(0,0,theCanvas.width,theCanvas.height);
-    Plotly.purge('graph');
-    txtInit();
-    v.play();
+    if (v.ended || !txtDwn)
+    {
+        btn.value = "Analyse";
+        ctx.clearRect(0,0,theCanvas.width,theCanvas.height);
+        v.play();
+    }
 }
 
 function analyse()
 {
-    btn.disabled = true;
-    btn.style.backgroundColor = '#cccccc';
-    txtInit();
     GRAPHS();
     t=1;
     animate();
