@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fluid Flow</title>
+    <link rel="stylesheet" href="pipeStyle/style.css" />
+
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showMathMenu: false
+      });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"">
+    </script>
+  </head>
+
+  <body>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/two.js/build/two.js"></script>
+
+
+    <div id="hiddenMathJax" style="visibility:hidden">
+
+    <form>
+                     <label>Select Flow Rate (L/min)</label>
+                     <select id = 'FlowRate' style = "font-size: 15px" >
+                         <option value = 0 Selected>0</option>
+                         <option value = 2>2</option>
+                         <option value = 4>4</option>
+                         <option value = 6>6</option>
+                         <option value = 8>8</option>
+                         <option value = 10>10</option>
+                         <option value = 20>20</option>
+                         <option value = 30>30</option>
+                         <option value = 40>40</option>
+                         <option value = 50>50</option>
+                         <option value = 60>60</option>
+                         <option value = 70>70</option>
+                         <option value = 80>80</option>
+                         <option value = 90>90</option>
+                         <option value = 100>100</option>
+                     </select>
+            </form>
+
+        <form>
+                <label>Select Pipe</label>
+                <select id = 'pipeSelect' style = "font-size: 15px">
+                <option value = 'A' Selected>Pipe A</option>
+                <option value = 'B'>Pipe B</option>
+                <option value = 'C'>Pipe C</option>
+                </select>
+      <form>
+
+
+
+      <div id="diagramContainer" style="width:600px;height:400px;">
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="pipejs/lib.js"></script>
+    <script type="text/javascript" src="pipejs/app.js"></script>
+
+  </body>
+
+</html>
