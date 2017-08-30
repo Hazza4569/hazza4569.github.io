@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Quadrats</title>
+		<style>
+			body { margin: 20; }
+			canvas { width: 100%; height: 100% }
+			p { font-size: 16px }
+			li { font-size: 16px }
+			label { font-family: arial; font-size: 16px }
+			option { font-family: arial; font-size: 16px }
+			input { font-family: arial; font-size: 16px }
+			h { font-family: arial; font-size: 18px; font-weight: bold }
+		</style>
+		<body>
+
+
+
+		<!----------------------------
+
+		<script src="Bootstrap\bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="Bootstrap\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+
+		---------------------------->
+
+		<!---------------------------->
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.js"></script>
+		<link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
+
+		<!---------------------------->
+
+		<div class="page-header" style="background-color:#6A0C5B;color:#E0E0E0;">
+			<font size="7"><center>Spatial Distribution of a Plant Population</center></font>
+		</div>
+
+		<br>
+
+
+		<div class="container-fluid">
+
+			<form method="GET" action="" onSubmit="" style="margin:0; padding:0; ">
+
+					<h>
+						The Three Distributions </h> <br>
+
+				   <p style="font-family:arial;">
+				   In any environment there are three possible distributions of individual plants; aggregated, regular or random.
+				   </p>
+				   <img src="distributions.jpg" style="width:682px;height:245px;"> <br>
+
+				   <br>
+
+				   <h>How can you identify these patterns? </h> <br>
+
+				   <p style="font-family:arial;">
+						If you sample three such environments with quadrats and score the presence or absence of a plant species in your quadrat, each would have a different frequency distribution: <br> <br>
+
+						<ul type="disc" style="font-family:arial;">
+
+						<li>With an <b>aggregated</b> distribution you would be more likely to find some quadrats with few or no plants or quadrats containing a lot of plants. Thus the variance would be large and so the mean/variance ratio is less than one. </li> <br>
+
+						<li>In a <b>regular</b> distribution you are likely to always find approximately the same number of plants in each quadrat. Thus the variance will be small and the mean/variance ratio will be greater than one. </li> <br>
+
+						<li>In a <b>random </b>distribution the mean/variance is about one. </li> </p> <br>
+						</ul>
+						  <left><img src="Capture.png" style="width:480px;height:360px;"></left> <br><br><br>
+
+				<h>  Procedure: </h> <br>
+
+				<p style="font-family:arial;">
+
+					1.	Randomly position your quadrat in field 1 and record how many of each of the 3 species are in the quadrat. <br>
+					2.	Repeat this until you have ‘thrown’ 25 quadrats. <br>
+					3.	Record the data in the table below. <br>
+					4.	Calculate the mean/variance ratio for each species. Variance is standard deviation,&delta; squared (&delta;&sup2;,&delta; can be calculated on a scientific calculator, the symbol is usually X&delta;n-1). <br>
+					5.	Decide how each of the species is distributed. <br>
+				</p>
+
+				<br>
+
+			</form>
+
+		</div>
+
+		<br><br>
+
+			<div class="container-fluid">
+
+			<h>Throwing the Quadrat</h> <br>
+
+			<!--BUTTONS----------------------------------------------------------------------------------------------------------->
+                              <form>
+										<label>Select entry method:</label>
+										<select id = 'Entry'>
+												<option value = 2>Manual</option>
+												<option value = 1>Automatic</option>
+
+										</select>
+							<input type= 'button' value = 'Update Entry' id = 'updateEntry1' onclick='updateEntry()'><br>
+
+								<label>Select counting method:</label>
+										<select id = 'Count'>
+												<option value = 2>The entire flower is inside quadrat</option>
+												<option value = 0>Midpoint inside quadrat</option>
+												<option value = 1>Any part of flower inside quadrat</option>
+
+										</select>
+							<input type= 'button' value = 'Update Count' id = 'updateCount1' onclick='updateCount()'><br>
+						</form>
+
+            <!--BUTTONS----------------------------------------------------------------------------------------------------------->
+
+			<p style="font-family:arial;">
+				If you have selected manual data entry, please enter the number of plants in the quadrat each time it is thrown. Use the numbers you record to determine the distribution. 
+			</p>
+
+			<br>
+
+				<div class="col-md-6" >
+
+					<div>
+						<form method="GET" action="" onSubmit="" style="margin:0; padding:0; ">
+
+
+
+							<table id="table" font="arial" font-size="16px" border="3" cellpadding="5" cellspacing="0" style="width:500px;">
+							<tbody style="background-color:lilac; font-family:arial;">
+								<tr>
+									<td style="text-align: center;"><b>Quadrat Throw</td>
+									<td style="text-align: center;"><b>Species 1 (Circles)</td>
+									<td style="text-align: center;"><b>Species 2 (Squares)</td>
+									<td style="text-align: center;"><b>Species 3  (Stars)</td>
+								</tr>
+
+							</tbody>
+						</table>
+
+
+
+						<br>
+
+						</form>
+
+						</div>
+
+
+
+
+					<!-----------STUFF TO GO HERE------------>
+
+			</div>
+
+			<div id="mydiv" class="col-md-6" style="background-image: url(grass3.jpg); height: 500px; width: 525px;">
+
+				<script>
+
+					//FUNCTION DEFINITIONS.
+
+						var automatic;
+                        function updateEntry(){
+                                var method=document.getElementById('Entry').value;
+                                if (method == 1){
+                                automatic = true;
+                                }
+                                else{
+                                automatic = false;
+                                }
+                            }
+
+                        function updateCount(){
+                                countMethod=document.getElementById('Count').value;
+
+                            }
+
+                        //Returns a random number corresponding to x or y position of object.
+                        //The number returned will ensure the object is never cut off the screen.
+                        function rand() {
+                            return (Math.random() * (field - (2 * width)) + width);
+                        }
+
+                        //Generates a random float between min and max.
+                        function getRandomInt(min, max) {
+                            return Math.floor(Math.random() * (max - min + 1)) + min;
+                        }
+
+                    //Side length of the field that contains the plants.
+                    var field = 500;
+
+                    //Width of square.
+                    var width = field / 25;
+
+                    //This is the number of each plant.
+                    //MAKE THIS A SQUARE NUMBER!!!!!!!!!!!!!!!!!!!!
+                    //This ensures that the square plants can be arranged as a regular array.
+                    var num = 36;
+
+                    //Make an instance of two and place it on the page.
+                    var elem = document.getElementById('mydiv');
+                    var params = { width: field, height: field };
+                    var two = new Two(params).appendTo(elem);
+
+                    //Rectangle to set as background image.
+                    var bGround = two.makeRectangle(field / 2, field / 2, field, field);
+                    bGround.fill = 'transparent';
+                    bGround.noStroke();
+
+
+                        /**************************************/
+                        /*** SQUARES ***/
+
+                            //Splits the square field up into smaller squares.
+                            //Each smaller square will "store" a square plant.
+                            var sN = Math.sqrt(num);
+
+                            //Regularly placed squares.
+                            var squareArr = [];
+                            for (var i = 0; i < sN; i++) {
+                                //Generates the x ordinate for the ith row of squares.
+                                var x = (i * (field / sN)) + (field / (2 * sN));
+                                for (var j = 0; j < sN; j++) {
+                                    //Generates the y ordinate for the jth column of squares.
+                                    var y = (j * (field / sN)) + (field / (2 * sN));
+
+                                    //Making the squares.
+                                    var rect_i = two.makeRoundedRectangle(x, y, width, width, 2);
+                                    rect_i.fill = 'rgb(120, 20, 125)';
+                                    rect_i.opacity = 0.7;
+
+                                    //Array to store square objects.
+                                    squareArr.push(x);
+									squareArr.push(y);
+                                }
+                            }
+
+                        /*** END OF SQUARES ***/
+                        /**************************************/
+
+
+
+                        /**************************************/
+                        /*** CIRCLES ***/
+
+                            //Randomly placed circles with radius = width / 2.
+                            var circleArr = [];
+                            for (var i = 0; i < num; i++) {
+                                //Generating the circles.
+								var xCentre = rand();
+								var yCentre = rand();
+                                var circle_i = two.makeCircle(xCentre, yCentre, width / 2);
+                                circle_i.fill = '#C3040F';
+                                circle_i.opacity = 0.7;
+
+                                //Array to store circle objects.
+                                circleArr.push(xCentre);
+								circleArr.push(yCentre);
+                            }
+
+                        /*** END OF CIRCLES ***/
+                        /**************************************/
+
+
+
+                        /**************************************/
+                        /*** STARS ***/
+
+                            //Number of clusters (either 3 or 4).
+                            var numClusters = getRandomInt(3,4);
+
+                            //Array to store number of plants in each cluster.
+                            //E.g. clusterNum[0] = number of plants in cluster 1.
+                            var clusterNum = [];
+
+                            //See the for loop.
+                            var total = 0;
+
+                            for (var i = 0; i < (numClusters - 1); i++) {
+                                //Generates a random number for the number of plants in each cluster.
+                                //This is done within an appropriate range.
+                                var currentClusterNum = Math.floor(num / numClusters) + getRandomInt(-1,1);
+
+                                //Adds the number of plants in cluster i to the clusterNum array.
+                                clusterNum.push(currentClusterNum);
+
+                                //Counts the total number of plants in all the clusters thus far created.
+                                total += currentClusterNum;
+                            }
+
+                            //Works out how many plants are left in the final cluster.
+                            clusterNum.push(num - total);
+
+                            //Size of cluster radius.
+                            var cRad = 4 * sN;
+
+                            //Creating the clustered star objects.
+                            var starArr = [];
+                            for (var i = 0; i < numClusters; i++) {
+                                //Generating the position of cluster i.
+                                var xCluster = getRandomInt(field / (2 * sN), field - (field / (2 * sN)));
+                                var yCluster = getRandomInt(field / (2 * sN), field - (field / (2 * sN)));
+                                for (var j = 0; j < clusterNum[i]; j++) {
+                                    //Generating the position of plant j in cluster i.
+                                    var xStar = getRandomInt(-field / cRad, field / cRad) + xCluster;
+                                    var yStar = getRandomInt(-field / cRad, field / cRad) + yCluster;
+
+                                    //Making the stars to represent the plants.
+                                    var star_ij = two.makeStar(xStar, yStar, width / 2);
+                                    star_ij.fill = '#FFC300';
+                                    star_ij.opacity = 0.7;
+
+                                    //Array to store star objects.
+                                    starArr.push(xStar);
+									starArr.push(yStar);
+                                }
+                            }
+
+                        /*** END OF STARS ***/
+                        /**************************************/
+
+
+
+                    two.update();
+
+					//TO BE DETERMINED BY A BUTTON.
+						// 0 is midpoint inside quadrat.
+						// 1 is any part of the object is inside the quadrat.
+						// 2 is fully inside the quadrat.
+					var countMethod = 2;
+
+                    //Loops through arrays for use in function below.
+                    function loopThrough(theArray, arraySize, x0, y0, theta, quadratWidth, countingMethod) {
+
+						//Counts number of objects in quadrat.
+                        var count = 0;
+
+                        for (var i = 0; i < (2 * arraySize); i += 2) {
+                            //Power of superellipse.
+                            p = 20;
+
+                            //New principal axes.
+                            var xObj = theArray[i] - x0;
+                            var yObj = theArray[i+1] - y0;
+
+                            //Rotated coordinates of object.
+                            var xTwid = (xObj * Math.cos(theta)) + (yObj * Math.sin(theta));
+                            var yTwid = -(xObj * Math.sin(theta)) + (yObj * Math.cos(theta));
+
+                            //Testing whether the object's centre is inside the quadrat.
+                            var supEll = Math.pow(xTwid, p) + Math.pow(yTwid, p);
+							if (countingMethod == 0) var supEllRadius = quadratWidth / 2;
+								/* ^^^If object centre is inside a superellipse whose "radius" is the width
+										of the quadrat plus, then the midpoint of the object is inside the
+										quadrat.
+								 */
+							else if (countingMethod == 1) var supEllRadius = (quadratWidth / 2) + (width / 2);
+								/* ^^^If object centre is inside a superellipse whose "radius" is the width
+										of the quadrat plus half the width of the object, then some part
+										of the object is inside the quadrat.
+								 */
+							else var supEllRadius = (quadratWidth / 2) - (width / 2);
+								/* ^^^If object centre is inside a superellipse whose "radius" is the width
+										of the quadrat minus half the width of the object, then all of the
+										object is inside the quadrat.
+								 */
+							console.log(supEll);
+                            if (supEll < Math.pow(supEllRadius, p)) count++;
+                        }
+
+                        return count;
+
+                    }
+
+
+
+					var n=0;
+
+					var words=["Standard Deviation","Mean","Mean/Variance"];
+
+					function throwQuadrat() {
+						var quadratWidth = field / 5;
+                        var xQuadrat = getRandomInt(0.75 * quadratWidth, field - (0.75 * quadratWidth));
+                        var yQuadrat = getRandomInt(0.75 * quadratWidth, field - (0.75 * quadratWidth));
+                        //var quadrat = two.makeRectangle(xQuadrat, yQuadrat, quadratWidth, quadratWidth);
+                        var quadrat = two.makeRoundedRectangle(xQuadrat, yQuadrat, quadratWidth, quadratWidth, 10);
+
+                        var quadratOrientation = Math.random() * Math.PI / 2;
+                        quadrat.rotation = quadratOrientation;
+                        quadrat.fill = 'transparent';
+                        quadrat.stroke = 'rgb(0,0,0)';
+                        quadrat.linewidth = 2.5;
+
+                        var circleCount = loopThrough(circleArr, num, xQuadrat, yQuadrat, quadratOrientation, quadratWidth, countMethod);
+                        var squareCount = loopThrough(squareArr, num, xQuadrat, yQuadrat, quadratOrientation, quadratWidth, countMethod);
+                        var starCount = loopThrough(starArr, num, xQuadrat, yQuadrat, quadratOrientation, quadratWidth, countMethod);
+
+                        two.update();
+
+                        two.remove(quadrat);
+
+if (automatic==true){
+                        var table = document.getElementById("table");
+
+                                    var row = table.insertRow(-1);
+                                    row.style="text-align: center";
+                                   var cell1 = row.insertCell(0);
+                                   var cell2 = row.insertCell(1);
+                                   var cell3 = row.insertCell(2);
+                                   var cell4 = row.insertCell(3);
+                                    var box1 = document.createElement("div");
+                                    box1.type = "text";
+                                    box1.style="width:100px; text-align:center; margin:auto";
+                                    box1.id="a"+n;
+                                    var box2 = document.createElement("div");
+                                    box2.type = "text";
+                                    box2.style="width:100px; text-align:center; margin:auto";
+                                    box2.id="b"+n;
+                                    var box3 = document.createElement("div");
+                                    box3.type = "text";
+                                    box3.style="width:100px; text-align:center; margin:auto";
+                                    box3.id="c"+n;
+                                    var box4 = document.createElement("div");
+                                    box4.type = "text";
+                                    box4.style="width:100px; text-align:center; margin:auto";
+                                    box4.id="d"+n;
+
+                                    n= n+1;
+                                    cell1.appendChild(box1);
+                                    cell2.appendChild(box2);
+                                    cell3.appendChild(box3);
+                                    cell4.appendChild(box4);
+
+
+                                    cell1.innerHTML=n.toString();
+                                    cell2.innerHTML=circleCount.toString();
+                                    cell3.innerHTML=squareCount.toString();
+                                    cell4.innerHTML=starCount.toString();
+                                    //document.getElementById("s"+n).innerHTML = n;
+                                    //document.getElementById("v"+n).innerHTML = v;
+
+
+                                    if (n==25){
+                                    document.getElementById('buttonq').style.visibility = 'hidden';
+                                    showTable();
+
+
+                                }
+                            }
+
+                                    else{
+
+                                                var table = document.getElementById("table");
+
+                                                var row = table.insertRow(-1);
+                                                row.style="text-align: center";
+                                               var cell1 = row.insertCell(0);
+                                               var cell2 = row.insertCell(1);
+                                               var cell3 = row.insertCell(2);
+                                               var cell4 = row.insertCell(3);
+                                                var box1 = document.createElement("div");
+                                                box1.type = "text";
+                                                box1.style="width:100px; text-align:center; margin:auto";
+                                                box1.id="a"+n;
+
+                                                var box2 = document.createElement("input");
+                                                box2.type = "text";
+                                                box2.style="width:100px; text-align:center; margin:auto";
+                                                box2.id="b"+n;
+                                                var box3 = document.createElement("input");
+                                                box3.type = "text";
+                                                box3.style="width:100px; text-align:center; margin:auto";
+                                                box3.id="c"+n;
+                                                var box4 = document.createElement("input");
+                                                box4.type = "text";
+                                                box4.style="width:100px; text-align:center; margin:auto";
+                                                box4.id="d"+n;
+
+                                                n= n+1;
+                                                cell1.appendChild(box1);
+                                                cell2.appendChild(box2);
+                                                cell3.appendChild(box3);
+                                                cell4.appendChild(box4);
+
+
+                                                    cell1.innerHTML=n.toString();
+
+
+
+                                                if (n==25){
+                                                        document.getElementById('buttonq').style.visibility = 'hidden';
+                                                        showTable();
+
+                                        }
+
+                    }
+
+					var numColumns = 3;
+
+
+
+						function showTable(){
+                        for(var i=0; i<3; i++) {
+														console.log(i);
+                                                            var table = document.getElementById("table");
+
+                                                            var row = table.insertRow(-1);
+                                                            row.style="text-align: center";
+                                                           var cell1 = row.insertCell(0);
+                                                           var cell2 = row.insertCell(1);
+                                                           var cell3 = row.insertCell(2);
+                                                           var cell4 = row.insertCell(3);
+                                                            var box1 = document.createElement("div");
+                                                            box1.type = "text";
+                                                            box1.style="width:100px; text-align:center; margin:auto";
+                                                            box1.id="e"+i;
+
+                                                            var box2 = document.createElement("input");
+                                                            box2.type = "text";
+                                                            box2.style="width:100px; text-align:center; margin:auto";
+                                                            box2.id="f"+i;
+                                                            var box3 = document.createElement("input");
+                                                            box3.type = "text";
+                                                            box3.style="width:100px; text-align:center; margin:auto";
+                                                            box3.id="g"+i;
+                                                            var box4 = document.createElement("input");
+                                                            box4.type = "text";
+                                                            box4.style="width:100px; text-align:center; margin:auto";
+                                                            box4.id="h"+i;
+                                                            cell1.appendChild(box1);
+                                                            cell2.appendChild(box2);
+                                                            cell3.appendChild(box3);
+                                                            cell4.appendChild(box4);
+
+                                                            var thisword=words[i];
+                                                            cell1.innerHTML=thisword.toString();
+
+
+                                                            }
+
+                                                            var table = document.getElementById("table");
+
+                                                            var row = table.insertRow(-1);
+                                                            row.style="text-align: center";
+                                                           var cell1 = row.insertCell(0);
+                                                           var cell2 = row.insertCell(1);
+                                                           var cell3 = row.insertCell(2);
+                                                           var cell4 = row.insertCell(3);
+                                                            var box1 = document.createElement("div");
+                                                            box1.type = "text";
+                                                            box1.style="width:100px; text-align:center; margin:auto";
+                                                            box1.id="f";
+
+                                                            var box2 = document.createElement("select");
+															box2.type = "text";
+															box2.style="width:100px; text-align:center; margin:auto";
+															box2.id="g";
+															var dists=["Random", "Aggregated", "Regular"];
+															for (var i = 0; i < dists.length; i++) {
+																	var optionDist = document.createElement("option");
+																	optionDist.value = dists[i];
+																	optionDist.text = dists[i];
+																	box2.appendChild(optionDist);
+																}
+
+															var box3 = document.createElement("select");
+															box3.type = "text";
+															box3.style="width:100px; text-align:center; margin:auto";
+															box3.id="b"+n;
+
+															for (var i = 0; i < dists.length; i++) {
+																	var optionDist = document.createElement("option");
+																	optionDist.value = dists[i];
+																	optionDist.text = dists[i];
+																	box3.appendChild(optionDist);
+																}
+
+															var box4 = document.createElement("select");
+															box4.type = "text";
+															box4.style="width:100px; text-align:center; margin:auto";
+															box4.id="b"+n;
+
+															for (var i = 0; i < dists.length; i++) {
+																	var optionDist = document.createElement("option");
+																	optionDist.value = dists[i];
+																	optionDist.text = dists[i];
+																	box4.appendChild(optionDist);
+																}
+
+
+                                                            cell1.appendChild(box1);
+                                                            cell2.appendChild(box2);
+                                                            cell3.appendChild(box3);
+                                                            cell4.appendChild(box4);
+
+                                                            thisword="Distribution";
+                                                            cell1.innerHTML=thisword.toString();
+
+					}
+				}
+
+				</script>
+
+				<button id="buttonq" onclick="throwQuadrat()" type="button" class="btn btn-success btn-block" style="float: center; width: 500px">Throw Quadrat</button>
+
+				<br>
+
+			</div>
+
+		</div>
+
+		</body>
+
+
+
+	</head>
