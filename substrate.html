@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Enzyme Substrates</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/regression/1.4.0/regression.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="substrate.css" />
+</head>
+
+<body>
+    <div>
+    <div class="d">
+	<div>
+	[E]:<input onkeyup="costcalc()" id="E" type="text" name="E" style="width:100px;" /> 	
+	<select id="enz" name="enz" onclick="costcalc()">
+	 <option id="Type A" value="Type A">Type A &#9679; </option>
+	 <option id="Type B" value="Type B">Type B &#9650; </option>
+	 <option id="Type C" value="Type C">Type C &#9724; </option>
+	 <option id="Type D" value="Type D">Type D &#9830; </option>
+	</select>
+	</div>
+	<div>
+	[S]:<input onkeyup="costcalc()" id="S" type="text" name="S" style="width:100px;" /> 
+	</div>
+	<div>
+	[I]:<input  onkeyup="costcalc()" id="I" type="text" name="I" style="width:100px;" /> 	
+	<select id="inhib" name="inhib" onclick="dropdown()">
+	 <option id="none" value="none">None</option>
+	 <option id="competitive" value="competitive">Competitive</option>
+	 <option id="uncompetitive" value="uncompetitive">Uncompetitive</option>
+	 <option id="mixed" value="mixed">Mixed</option>
+	</select>
+	</div>
+    </div>
+	<div class="d">
+	<button  class="button" id="run" onclick="Run()">Run</button>
+	<button  class="button" id="reset" onclick="Reset()">Reset</button>
+	</div>
+    <div class="c">Cost per run:
+        <div class="a" type="text" id="cost per" /></div>
+    <div class="c">Total cost:
+        <div class="a" type="text" id="cost total" /></div>
+		</div>
+		    <div class="c">
+        Measurement offset:<input id="off" type="text" name="off" style="width:100px;" /> 
+		</div>
+<div class="b">
+                    <table id="table"  cellpadding="1" cellspacing="1" style="width:500px;">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center;"><b>[S] mM</b></td>
+                                <td style="text-align: center;"><b>V &#956mol dm<sup>-3</sup>s<sup>-1</sup></b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					</div>
+<div class="b">
+                    <canvas id="myChart" width="500" height="500"></canvas>
+</div>
+<div class="c">
+	<a href='' id='dataDownload'>download</a>
+	<div>Vmax:
+        <input type="text" name="vmax" id="vmax" style="width:100px;" />
+		&#xB1
+		<input type="text" name="vmaxpm" id="vmaxpm" style="width:100px;" />
+    </div>
+	<div>Km:
+        <input type="text" name="km" id="km" style="width:100px;" />
+		&#xB1
+		<input type="text" name="kmpm" id="kmpm" style="width:100px;" />
+    </div>
+</div>
+    <script src="substrate.js"></script>
+</body>
+
+</html>

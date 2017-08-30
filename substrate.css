@@ -1,0 +1,93 @@
+body
+{
+font-size:100%;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+color:#000000;
+background-color:#FFFFFF;
+}
+
+select{
+	background-color: #3232FF;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+	
+#table
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 45px;
+	width: 480px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#table th
+{
+	font-size: 14px;
+	font-weight: normal;
+	padding: 12px 15px;
+	color: #039;
+}
+#table td
+{
+	padding: 5px 15px;
+	color: #669;
+	border-top: 1px solid #99ADD6;
+}
+
+input[type="text"] { 
+    background: white; 
+    border: 0.5px solid #D6D6FF; 
+    border-radius: 3px; 
+    box-shadow: 0 0 5px 3px #D6D6FF; 
+    color: #666; 
+    outline: none; 
+    height:23px; 
+    width: 275px; 
+  } 
+  
+  div {
+    padding: 10px 25px;
+	
+	
+}
+
+  div.a {
+    padding: 0px 0px;
+	display:inline;
+	white-space: nowrap;
+}
+  div.b {
+    width: 45%;
+    position: relative;
+    float: left;
+}
+
+  div.c {
+	clear:left;
+}
+
+
+  div.d {
+    position: relative;
+    float: left;
+}
+
+.button {
+    background-color: #3232FF;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

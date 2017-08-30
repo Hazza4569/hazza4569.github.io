@@ -1,0 +1,12 @@
+How to replicate this with different videos:
+
+Replace the video files with the new ones, and add their paths to the sources inside the video tags in projectiles.html (lines 15,16).
+
+You can modify the dimensions and styling if necessary, but be aware that most of this happens in the init function in chartMain.js rather than in stylin.css, as it needs to vary with window size. You must keep the width at 640 pixels otherwise it will mess with the calibration on overlays and a number of other properties.
+
+Calculate the parabola of the arc (in terms of pixels)*, and enter this in the equation for y[i] in terms of x[i] in the getPoints function (~line 270).
+
+Calculate the x position of the ball (in pixels) at each time (in seconds) of the video*, and with that replace the equation for ballPos at the beginning of the animate function (~line 165).
+
+
+*for calculating the path of any objects in your video I would recommend using the opensource software Tracker http://physlets.org/tracker/

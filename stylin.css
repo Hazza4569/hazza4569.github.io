@@ -1,0 +1,163 @@
+body { margin: 0; }
+
+			#vidCanvas {
+/*				border: 1px solid red;*/
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#compCanvas {
+/*				border: 1px solid red;*/
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#compCanvas2 {
+/*				border: 1px solid red;*/
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#vid {
+				/*border: 1px solid blue;*/
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#text {
+				/*border: 1px solid green;*/
+				position:absolute;
+				/*padding: 100px;*/
+				/*left:0px;*/
+				/*top:0px;*/
+				text-align: center;
+				}
+
+			#notmydiv
+			{
+				/*border: 1px solid blue;*/
+				position:absolute;
+				/*padding: 1px;
+				left:0px;
+				top:0px;
+				z-index: 1;
+				width:640px;*/
+				text-align: right;
+				z-index: 11;
+			}
+			#graph
+			{
+				width: 640px;
+				height: 360px;
+				position:absolute;
+				padding: 10px;
+				left:0px;
+				top:0px;
+				z-index: -2;
+			}
+
+			#btn
+			{
+				/*background-color: #80CAF6; /* Green */
+    			border: none;
+    			color: white;
+    			padding: 7px 30px;
+    			text-align: center;
+    			text-decoration: none;
+    			display: inline-block;
+    			font-size: 16px;
+			}
+
+			#drop
+			{
+				/*border: 1px solid red;*/
+				position:absolute;
+				padding: 1px;
+				left:0px;
+				top:0px;
+				z-index: 1;
+				width:640px;
+				text-align: right;
+				z-index: 10;
+			}
+
+			#myList
+			{
+				/*padding:0px;*/
+				/*border: none;*/
+    			/*color: white;
+    			padding: 7px 30px;
+    			text-align: center;
+    			text-decoration: none;
+    			/*display: inline-block;
+    			font-size: 16px;*/
+    			font-family: helvetica;
+			}
+
+			#test
+			{
+				position:absolute;
+				
+				width: 100px;
+				height: 100px;
+				z-index:15;
+			}
+
+			#left
+			{
+				/*border:20px solid blue;*/
+				position:absolute;
+				left:0px;
+				top:00px;
+				z-index:-41;
+				background-image:url("eqns.jpg");
+			}
+
+			#white
+			{
+				position:absolute;
+				background-color:white;
+				z-index:-40;
+			}
+
+			#title
+			{
+				position:absolute;
+				background-color:white;
+				display: inline-block;
+				text-align: center;
+			}
+
+			p, label
+			{
+				font-family: helvetica;
+			}
+
+			h1
+			{
+				margin-top: 10px;
+				font-family: helvetica;
+				text-align: center;
+				/*background-color: green;*/
+				/*color: white;*/
+				/*padding: 5px;*/
+				display:inline-block;
+			}
