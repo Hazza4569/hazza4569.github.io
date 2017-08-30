@@ -1,0 +1,201 @@
+<html>
+	<head>
+	<meta charset="utf-8">
+
+		<title></title>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+		<style>
+		body{
+			font-family: Arial
+
+		}
+		h1{
+			text-align: center;
+		}
+
+
+		</style>
+
+	</head>
+	<body>
+		<div> <h1 style = "background-color:#33FFF9"><b>Capture-Recapture Experiment</b></h1></div>
+
+
+		<div>
+			<b>Procedure</b> <br>
+			<b> 1. </b> Take the tank of fish below. <br>
+			<b> 2. </b> Select the size of the sub-sample of the fish. This is <b>n</b><sub>1</sub>. Write it in the table below.  This is the first capture event. <br>
+			<b> 3. </b> Mark these fish. <br>
+			<b> 4. </b> Put the fish back in the tank. The fish will swim about, so their positions become randomised. <br>
+			<b> 5. </b> Select the size of the second sub-sample of the fish. This is <b>n</b><sub>2</sub>. Write it in the table below. <br>
+			<b> 6. </b> Count the number of marked fish that were recaptured. This is <b>m</b><sub>2</sub>, put it in the table. <br>
+			<b> 7. </b> Put the fish back in the tank. </br>
+			<b> 8. </b> Repeat the recapture process three more times (<b>n</b><sub>1</sub> will obviously remain the same), varying the number you recapture. <br>
+			<b> 9. </b> Replace the fish in the tank. <br>
+			<b> 10. </b> Calculate the estiamted population size (N) for each of the three capture events. N is given by:
+
+			$$ N  =  \frac{\mathbf{n}_1\mathbf{n}_2}{\mathbf{m}_2} $$
+
+		</div>  <!--Procedure-->
+
+		<form>
+				 <label>Select Original Colour</label>
+				 <select id = 'OriginalColour' style = "font-size: 15px">
+					 <option value = 'orange' Selected>Orange</option>
+					 <option value = 'red'>Red</option>
+					 <option value = 'yellow'>Yellow</option>
+					 <option value = '#AF652F'>Brown</option>
+					 <option value = '#FF33E6'>Pink</option>
+					 <option value = 'green'>Green</option>
+					 <option value = 'purple'>Purple</option>
+				 </select>
+		</form> <!--Colours-->
+
+		<form>
+				 <label>Select Marking Colour</label>
+				 <select id = 'MarkingColour' style = "font-size: 15px">
+					 <option value = 'orange'>Orange</option>
+					 <option value = 'red' Selected >Red</option>
+					 <option value = 'yellow'>Yellow</option>
+					 <option value = '#AF652F'>Brown</option>
+					 <option value = '#FF33E6'>Pink</option>
+					 <option value = 'green'>Green</option>
+					 <option value = 'purple'>Purple</option>
+				 </select>
+		</form>
+
+		<div>
+			<input type= 'button' value = 'Update Colours' id = 'updatecolour' onclick='updatecolour()' style = 'font-size: 20px';><br>
+		</div>
+
+		<div id="mydiv"></div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.js"></script>
+
+
+
+
+
+		<form>
+			There are 50 fish in total in the tank. <br>
+			Number of fish to be captured, between 1 and 50: <br>
+			<input type = 'number' name = 'numberofbeans' id='numberofbeans' min='1' max='50'><br>
+			<input type= 'button' value = 'Submit' id = 'Submit' onclick='moveone()'><br>
+			Mark the selected fish <br>
+			<input type= 'button' value = 'Mark' id = 'Mark' onclick='mark()'><br>
+			Insert the fish back into the tank <br>
+			<input type= 'button' value = 'Replace' id = 'Shuffle' onclick='shuffle()'><br>
+			Number of fish to be captured, between 1 and 50 (second time): <br>
+			<input type = 'number' name = 'numberofbeans2' id='numberofbeans2' min='1' max='50'><br>
+			<input type= 'button' value = 'Submit' id = 'Submit2' onclick='movetwo()'><br>
+			Insert the fish back into the tank, second time <br>
+			<input type= 'button' value = 'Replace' id = 'Shuffle1' onclick='shuffle1()'><br>
+			Number of fish to be captured, between 1 and 50 (third time): <br>
+			<input type = 'number' name = 'numberofbeans3' id='numberofbeans3' min='1' max='50'><br>
+			<input type= 'button' value = 'Submit' id = 'Submit3' onclick='movethree()'><br>
+			Insert the fish back into the tank, third time <br>
+			<input type= 'button' value = 'Replace' id = 'Shuffle2' onclick='shuffle2()'><br>
+			Number of fish to be captured, between 1 and 50 (fourth time): <br>
+			<input type = 'number' name = 'numberofbeans4' id='numberofbeans4' min='1' max='50'><br>
+			<input type= 'button' value = 'Submit' id = 'Submit4' onclick='movefour()'><br>
+			Insert the fish back into the tank, fourth time <br>
+			<input type= 'button' value = 'Replace' id = 'Shuffle3' onclick='shuffle3()'><br>
+			Number of fish to be captured, between 1 and 50 (fifth time): <br>
+			<input type = 'number' name = 'numberofbeans5' id='numberofbeans5' min='1' max='50'><br>
+			<input type= 'button' value = 'Submit' id = 'Submit5' onclick='movefive()'><br>
+			Insert the fish back into the tank, fifth time <br>
+			<input type= 'button' value = 'Replace' id = 'Shuffle4' onclick='shuffle4()'><br>
+
+		</form>    <!--Buttons-->
+		<script src="fish.js" type="text/javascript"></script>
+		<div>
+		  <table border="1" cellpadding="1" cellspacing="1" style="width:550px;">
+		    <tbody>
+		      <tr>
+		          <td style="text-align: center;"> </td>
+		          <td style="text-align: center;">First capture </td>
+		          <td style="text-align: center;">Second capture </td>
+		          <td style="text-align: center;">Third capture</td>
+		          <td style="text-align: center;">Fourth capture </td>
+		          <td style="text-align: center;">Actual number in tank </td>
+		        </tr>
+		        <tr>
+		          <td style="text-align: center;"> <b>n</b><sub>1</sub> </td>
+		          <td style="text-align: center;">
+		                <input  type="text" name="val1a" id="val1a" style="width:100px;" />
+		          </td>
+		         <td style="text-align: center;" bgcolor="grey"></td>
+		          <td style="text-align: center;" bgcolor="grey"></td>
+		           <td style="text-align: center;" bgcolor="grey"></td>
+		            <td style="text-align: center;" bgcolor="grey"></td>
+		     </tr>
+		 <tr>
+		   <td style="text-align: center;"> <b>n</b><sub>2</sub> </td>
+			 <td style="text-align: center;">
+							 <input type="text" name="val2a" id="val2a" style="width:100px;" />
+			 </td>
+		         <td style="text-align: center;">
+		                 <input  type="text" name="val2b" id="val2b" style="width:100px;" />
+		         </td>
+		   <td style="text-align: center;">
+		                 <input  type="text" name="val2c" id="val2c" style="width:100px;"/>
+		         </td>
+		         <td style="text-align: center;">
+		                 <input type="text" name="val2d" id="val2d" style="width:100px;" />
+		         </td>
+		          <td style="text-align: center;" bgcolor="grey"></td>
+		     </tr>
+		 <tr>
+		   <td style="text-align: center;"> <b>m</b><sub>2</sub> </td>
+			 <td style="text-align: center;">
+							 <input  type="text" name="val3a" id="val3a" style="width:100px;"  />
+			 </td>
+		         <td style="text-align: center;">
+		                 <input  type="text" name="val3b" id="val3b" style="width:100px;" />
+		         </td>
+		   <td style="text-align: center;">
+		                 <input  type="text" name="val3c" id="val3c" style="width:100px;"/>
+		         </td>
+		         <td style="text-align: center;">
+		                 <input  type="text" name="val3d" id="val3d" style="width:100px;" />
+		         </td>
+		          <td style="text-align: center;" bgcolor="grey"></td>
+		     </tr>
+		 <tr>
+		   <td style="text-align: center;"> Estimated population size, N</td>
+			 <td style="text-align: center;">
+							 <input type="text" name="val4a" id="val4a" style="width:100px;" />
+			 </td>
+		         <td style="text-align: center;">
+		                 <input type="text" name="val4b" id="val4b" style="width:100px;"  />
+		         </td>
+		   <td style="text-align: center;">
+		                 <input type="text" name="val4c" id="val4c" style="width:100px;"/>
+		         </td>
+		         <td style="text-align: center;">
+		                 <input type="text" name="val4d" id="val4d" style="width:100px;" />
+		         </td>
+		          <td style="text-align: center;" bgcolor="grey"></td>
+		     </tr>
+				 <tr>
+					 <td style="text-align: center;" bgcolor="grey"></td>
+						 <td style="text-align: center;" bgcolor="grey"></td>
+						 <td style="text-align: center;" bgcolor="grey"></td>
+							<td style="text-align: center;" bgcolor="grey"></td>
+							 <td style="text-align: center;" bgcolor="grey"></td>
+							 <td style="text-align: center;"> 50 </td>
+
+				 </tr>
+
+		   </tbody>
+		  </table>
+		</div> <!--table-->
+	</body>
+</html>
