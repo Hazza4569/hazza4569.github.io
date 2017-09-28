@@ -1,0 +1,74 @@
+body
+{
+	overflow: hidden;
+	background-color: #ffffff;
+}
+
+.hBorder
+{
+	position:absolute;
+/*	background-color: green;
+	height: 20px;
+	width: calc(100vw - 80px);*/
+	/*z-index: -5;*/
+}
+
+.vBorder
+{
+	position:absolute;
+/*	background-color: green;
+	height: calc(100vh - 80px);
+	width: 20px;*/
+	/*z-index: -5;*/
+}
+
+#logo
+{
+	position: absolute;
+	left: 30vw;
+	top: 20vh;
+	width:230px;
+	/*height: 180px;*/
+	background-image:url(gazeboed.gif);
+	background-size: 100%;
+}
+
+#title
+{
+	position: absolute;
+	font-family: 'Righteous', cursive;
+	display:block;
+	line-height:0.8;
+}
+
+#ttl1
+{
+	text-align: left;
+}
+
+#ttl2
+{
+	text-align:center;
+}
+
+.mybtn1
+{
+	padding:2px;
+	margin:0;
+	background-color:#ff2222;
+	color:green;
+	border:2px solid red;
+	border-radius: 8px;
+}
+.mybtn1:hover
+{
+	background-color:white;
+}
+
+#subtitle
+{
+	position: absolute;
+	text-align:center;
+	word-wrap: break-word;
+	font-family: 'Open Sans', sans-serif;
+}
