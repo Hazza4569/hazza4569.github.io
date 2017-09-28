@@ -4,7 +4,9 @@ var bdrThick = 20; //pixels
 var bdrEdge = 10; //pixels
 var bdrCorners = 1; //0 for filled corners, 1 for cutout
 var lgoSize = 0.5; //size of logo as canvas percentage
-var lgoVert = 0.4; //vertical height of logo, 0 is top, 1 is middle, 2 is bottom
+var lgoDimW = 1105;
+var lgoDimH = 795;
+var lgoVert = 0.45; //vertical height of logo, 0 is top, 1 is middle, 2 is bottom
 var ttlScale = 1; //font size scale for title
 var subScale = 1.2
 
@@ -56,8 +58,8 @@ function updateStyles()
 	var edge = bdrThick + bdrEdge;
 	var ctrWidth = w - edge*2;
 	var ctrHeight = h - edge*2;
-	var lgoWidth = Math.min(ctrWidth*lgoSize, ctrHeight*lgoSize*230/180);
-	var lgoHeight = Math.min(ctrHeight*lgoSize, ctrWidth*lgoSize*180/230);
+	var lgoWidth = Math.min(ctrWidth*lgoSize, ctrHeight*lgoSize*lgoDimW/lgoDimH);
+	var lgoHeight = Math.min(ctrHeight*lgoSize, ctrWidth*lgoSize*lgoDimH/lgoDimW);
 
 	var lgoWidthProp=lgoWidth.toString()+"px";
 	var lgoHeightProp=lgoHeight.toString()+"px";
@@ -80,7 +82,7 @@ function updateStyles()
 	var ttlWidthProp = ttlWidth.toString()+"px";
 	var ttlHeightProp = ttlHeight.toString()+"px";
 	var ttlLeft =  (edge + (ctrWidth-ttlWidth)/2).toString()+"px";
-	var ttlTop = (lgoBot-40).toString()+"px";
+	var ttlTop = (lgoBot-30).toString()+"px";
 
 	$('#title').css(
 	{
