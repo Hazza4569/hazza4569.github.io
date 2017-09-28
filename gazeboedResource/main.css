@@ -36,7 +36,6 @@ body
 #title
 {
 	position: absolute;
-	font-family: 'Righteous', cursive;
 	display:block;
 	line-height:0.8;
 }
@@ -44,11 +43,13 @@ body
 #ttl1
 {
 	text-align: left;
+	font-family: 'Righteous', cursive;
 }
 
 #ttl2
 {
 	text-align:center;
+	font-family: 'Righteous', cursive;
 }
 
 .mybtn1
