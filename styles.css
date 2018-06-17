@@ -1,0 +1,280 @@
+.presets{
+    font-family: Helvetica;
+    margin:0;
+    /*background-image: url("./resources/space.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+
+
+}
+
+/* START TITLE BAR STYLES*/
+
+.background{
+    height:100vh;
+    width:100vw;
+    /*background: rgba(255, 255, 255, 0.1);*/
+    /*position: fixed;*/
+}
+
+
+.two-thirds {
+    width: 68.65%;
+    height: 100vh;
+    display: flex;
+}
+
+.title-block {
+    float: right;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.title-content {
+    display: inline-block;
+    position: fixed;
+}
+
+.std-content {
+    width: 82.8%;
+    height: 100vh;
+    float: right;
+    display: flex;
+    background: aqua;
+}
+
+#about__content {
+    /*top:100vh;*/
+}
+
+
+/* END TITLE BAR STYLES*/
+
+/* FONT STYLING*/
+h1{
+    font-size: 45pt;
+
+    margin:0;
+}
+
+h2{
+    font-size: 16pt;
+
+    margin:0;
+}
+
+h3{
+    font-size: 20pt;
+}
+
+/* END FONT STYLING */
+
+/* START NAV BAR STYLES*/
+.nav {
+    position:fixed;
+
+    width: 33%;
+    height: 100vh;
+    float: left;
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-items: center;
+}
+
+.nav__link {
+    background: rgba(255, 255, 0, 1);
+    display: flex;
+    height: 20.3%;
+    width: 95%;
+    text-align: center;
+    align-items:center;
+    justify-items: center;
+    justify-content: center;
+
+    background: url("./resources/me-quarry.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    transition: width 0.3s
+}
+
+.nav__link:hover {
+    width: 100%;
+}
+.nav__link:hover .hex-fill {
+    background-color: rgba(200,200,200,1);
+}
+
+.nav__link-1{
+    animation-delay: 0.1s;
+    background: url("./resources/aston-webb.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.nav__link-2{
+    animation-delay: 0.2s;
+    background: url("./resources/code.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+.nav__link-3{
+    animation-delay: 0.3s;
+    background: url("./resources/cern-street.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.nav__link-4{
+    animation-delay: 0.4s;
+    background: #bbbbbb;
+
+}
+.nav__fade{
+    display: flex;
+    /*text-align: center;*/
+    /*align-items:center;*/
+    /*justify-items: center;*/
+    justify-content: flex-start;
+    position:relative;
+    height:100%;
+    width:100%;
+    background: rgba(255,255,255,0.7)
+}
+
+.nav-label {
+    position:absolute;
+    left:50%;
+    height:100%;
+    transform: translate(-50%,0);
+    display: flex;
+    justify-items: center;
+    align-items:center;
+}
+
+.nav-small {
+    width:12vmin;
+    height:100%;
+    /*left:84.84%;*/
+    margin-left:auto;
+    z-index: 0;
+
+    font-size:5vmin;
+    color:rgba(255,255,255,0);
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    flex-wrap:wrap;
+
+    border:1px white;
+    border-style: /*solid*/ none;
+
+    right:-11.5%;
+    position:relative;
+}
+
+.navicon {
+    text-align:center;
+    width:100%;
+    z-index: 3;
+}
+
+.sidetext {
+    writing-mode: sideways-lr;
+    font-size: 0pt;
+    text-align:center;
+}
+
+/* END NAV BAR STYLES*/
+
+
+.linkspan{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    z-index: 1;
+}
+
+
+.small-label {
+    font-size: 3vmin;
+    display: flex;
+    height: 100%;
+    position: relative;
+    left: 48%;
+    width: 40%;
+    color: white;
+    align-items:center;
+}
+
+
+
+.roundHex {
+position:relative;
+margin:0 auto;
+background:rgba(0, 0, 0, 0.2);
+border-radius:4px;
+height:7.2vmin;
+width: 12vmin;
+transition:all 0.5s;
+}
+.roundHex:before, .roundHex:after {
+content:"";
+position:absolute;
+top:0;
+left:0;
+background:inherit;
+border-radius:inherit;
+height:100%;
+width:100%;
+}
+.roundHex:before {
+-webkit-transform:rotate(60deg);
+-moz-transform:rotate(60deg);
+transform:rotate(60deg);
+/*transition:all 1s 0.5s;*/
+}
+.roundHex:after {
+-webkit-transform:rotate(-60deg);
+-moz-transform:rotate(-60deg);
+transform:rotate(-60deg);
+/*transition:all 1s 1s;*/
+}
+
+.hex-border {
+    /*top: 6vh;*/
+    /*right: -21vw;*/
+    background: rgba(100, 100, 100, 1);
+    display:flex;
+    position: absolute;
+    z-index: 1;
+}
+
+.hex-fill {
+    height:6.3vmin;
+    width: 10.5vmin;
+    background: rgba(255,255,255,1);
+    z-index: 2;
+    position: absolute;
+}
+
+.nav-highlight {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+}
+
+.hexlink{
+    width: 100%;
+    height: 10vmin;
+    position: absolute;
+    z-index: 10;
+}

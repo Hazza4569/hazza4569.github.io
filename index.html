@@ -1,41 +1,194 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset=utf-8>
-		<title>Harry's Pages</title>
-	</head>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="animate.css">
+    <!--<link href="node_modules/aos/dist/aos.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
 
-	<body>
-		<p> This directory contains the following subdirectories: </p>
-		<table>
-			<tr>
-				<td>&nbsp;&nbsp;&nbsp;</td>
-				<td><a href="/projectiles">/projectiles</a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><a href="/fish">/fish</a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><a href="/chimp">/chimp</a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><a href="/substrate">/substrate<a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><a href="/wheatstone">/wheatstone</a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><a href="/pipes">/pipes</a></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><a href="/quadrats">/quadrats</a></td>
-			</tr>
-		</table>
-	</body>
+
+<body class="presets">
+
+<div class="background" id ="scene1">
+
+    <div class="nav">
+
+        <div class="nav__link animated slideInLeft">
+            <a href="#page1"><span class="linkspan"></span></a>
+            <div class="nav__fade">
+                <div class="nav-highlight" id="hl0"></div>
+                <div class="nav-label">
+                    <h3>
+                    About Me
+                    </h3>
+                </div>
+                <div class="small-label"><h4>About Me</h4></div>
+                <div class="nav-small">
+                    <div class="roundHex hex-border"></div>
+                    <div class="roundHex hex-fill"></div>
+                    <i class="fas fa-user-circle fa-fw navicon"></i>
+                    <div class="hexlink"><a href="#page1"><span class="linkspan"></span></a></div>
+                </div>
+                <!--<div class="sidetext">About Me</div>-->
+            </div>
+
+        </div>
+
+        <div class="nav__link nav__link-1 animated slideInLeft">
+            <a href="#page2"><span class="linkspan"></span></a>
+            <div class="nav__fade">
+                <div class="nav-highlight" id="hl1"></div>
+                <div class="nav-label">
+                    <h3>
+                        Education
+                    </h3>
+                </div>
+                <div class="small-label"><h4>Education</h4></div>
+                <div class="nav-small">
+                    <div class="roundHex hex-border"></div>
+                    <div class="roundHex hex-fill"></div>
+                    <i class="fas fa-graduation-cap fa-fw navicon"></i>
+                    <div class="hexlink"><a href="#page2"><span class="linkspan"></span></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav__link nav__link-2 animated slideInLeft">
+            <a href="#page3"><span class="linkspan"></span></a>
+            <div class="nav__fade">
+                <div class="nav-highlight" id="hl2"></div>
+                <div class="nav-label">
+                    <h3>
+                        Projects
+                    </h3>
+                </div>
+                <div class="small-label"><h4>Projects</h4></div>
+                <div class="nav-small">
+                    <div class="roundHex hex-border"></div>
+                    <div class="roundHex hex-fill"></div>
+                    <i class="fas fa-laptop fa-fw navicon"></i>
+                    <div class="hexlink"><a href="#page3"><span class="linkspan"></span></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav__link nav__link-3 animated slideInLeft">
+            <a href="#page4"><span class="linkspan"></span></a>
+            <div class="nav__fade">
+                <div class="nav-highlight" id="hl3"></div>
+                <div class="nav-label">
+                    <h3>
+                        CERN Blog
+                    </h3>
+                </div>
+                <div class="small-label"><h4>CERN Blog</h4></div>
+                <div class="nav-small">
+                    <div class="roundHex hex-border"></div>
+                    <div class="roundHex hex-fill"></div>
+                    <i class="fas fa-newspaper fa-fw navicon"></i>
+                    <div class="hexlink"><a href="#page4"><span class="linkspan"></span></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav__link nav__link-4 animated slideInLeft">
+            <a href="#page5"><span class="linkspan"></span></a>
+            <div class="nav__fade">
+                <div class="nav-highlight" id="hl4"></div>
+                <div class="nav-label">
+                    <h3>
+                        More
+                    </h3>
+                </div>
+                <div class="small-label"><h4>More</h4></div>
+                <div class="nav-small">
+                    <div class="roundHex hex-border"></div>
+                    <div class="roundHex hex-fill"></div>
+                    <i class="fas fa-ellipsis-h fa-fw navicon"></i>
+                    <div class="hexlink"><a href="#page5"><span class="linkspan"></span></a></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
+
+    <!-- // START TITLE BAR //-->
+    <div class="two-thirds title-block">
+
+        <div class="title-content">
+            <h1 id="harry">
+                HARRY COOKE
+            </h1>
+            <h2 id="subtitle">
+                Particle Physics Student &middot; Computing Enthusiast
+            </h2>
+        </div>
+
+    </div>
+    <!-- // END TITLE BAR //-->
+
+    <div class="std-content" id="page1">
+        <div>
+            MORE STUFF
+            Goes here...
+            although most of it may well be hidden.
+        </div>
+
+    </div>
+
+    <div class="std-content" id="page2">
+        <div>
+            MORE STUFF
+            Goes here...
+            although  2 most of it may well be hidden.
+        </div>
+
+    </div>
+
+    <div class="std-content" id="page3">
+        <div>
+            MORE STUFF
+            Goes here...
+            although  2 most of it may well be hidden.
+        </div>
+
+    </div>
+
+    <div class="std-content" id="page4">
+        <div>
+            MORE STUFF
+            Goes here...
+            although  2 most of it may well be hidden.
+        </div>
+
+    </div>
+
+    <div class="std-content" id="page5">
+        <div>
+            MORE STUFF
+            Goes here...
+            although  2 most of it may well be hidden.
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
+<script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="node_modules/gsap/plugins/animation.gsap.js"></script>
+<script src="node_modules/jquery.scrollto/jquery.scrollTo.js"></script>
+<script src="node_modules/jquery.localscroll/jquery.localScroll.js"></script>
+<!--<script src="node_modules/aos/dist/aos.js"></script>-->
+
+<script src="main.js"></script>
+
+</body>
 </html>
