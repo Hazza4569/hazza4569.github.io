@@ -95,7 +95,7 @@ h3{
     justify-items: center;
     justify-content: center;
 
-    background: url("./resources/me-quarry.jpg");
+    background: url("images/me-quarry.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -111,19 +111,19 @@ h3{
 
 .nav__link-1{
     animation-delay: 0.1s;
-    background: url("./resources/aston-webb.jpg");
+    background: url("images/aston-webb.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 .nav__link-2{
     animation-delay: 0.2s;
-    background: url("./resources/code.png");
+    background: url("images/code.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
 }
 .nav__link-3{
     animation-delay: 0.3s;
-    background: url("./resources/cern-street.jpg");
+    background: url("images/cern-street.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

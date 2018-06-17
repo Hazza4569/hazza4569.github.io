@@ -5,7 +5,7 @@
  * *******************************************************
  */
 
-import styles from './../sass/aos.scss';
+import styles from '../sass/aos.scss';
 
 // Modules & helpers
 import throttle from 'lodash.throttle';

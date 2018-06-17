@@ -8,7 +8,7 @@
  * @return {Integer} [Final offset that will be used to trigger animation in good position]
  */
 
-import getOffset from './../libs/offset';
+import getOffset from '../libs/offset';
 
 const calculateOffset = function (el, optionalOffset) {
   let elementOffsetTop = 0;
