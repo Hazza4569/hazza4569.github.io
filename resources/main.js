@@ -144,6 +144,63 @@ $(function() {
             .setTween(twnNavHighlightb)
             .addTo(scrollController);
     }
+
+
+    //Sliding panels:
+    let twnSlidePanel = new TweenMax.from('#slide1', 0.5, {
+        x:'200%'
+    });
+    new ScrollMagic.Scene({
+        triggerElement: "#page1",
+        duration: '80%',
+        triggerHook: 0.8
+    })
+        .setTween(twnSlidePanel)
+        .addTo(scrollController);
+
+    twnSlidePanel = new TweenMax.from('#slide2', 0.5, {
+        x:'200%'
+    });
+    new ScrollMagic.Scene({
+        triggerElement: "#page2",
+        duration: '80%',
+        triggerHook: 0.8
+    })
+        .setTween(twnSlidePanel)
+        .addTo(scrollController);
+
+    twnSlidePanel = new TweenMax.from('#slide3', 0.5, {
+        x:'200%'
+    });
+    new ScrollMagic.Scene({
+        triggerElement: "#page3",
+        duration: '80%',
+        triggerHook: 0.8
+    })
+        .setTween(twnSlidePanel)
+        .addTo(scrollController);
+
+    twnSlidePanel = new TweenMax.from('#slide4', 0.5, {
+        x:'200%'
+    });
+    new ScrollMagic.Scene({
+        triggerElement: "#page4",
+        duration: '80%',
+        triggerHook: 0.8
+    })
+        .setTween(twnSlidePanel)
+        .addTo(scrollController);
+
+    twnSlidePanel = new TweenMax.from('#slide5', 0.5, {
+        x:'200%'
+    });
+    new ScrollMagic.Scene({
+        triggerElement: "#page5",
+        duration: '80%',
+        triggerHook: 0.8
+    })
+        .setTween(twnSlidePanel)
+        .addTo(scrollController);
 });
 
 //Scroll Linking:

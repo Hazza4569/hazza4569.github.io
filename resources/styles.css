@@ -38,18 +38,42 @@
     position: fixed;
 }
 
-.std-content {
+.std-pane {
     width: 82.8%;
     height: 100vh;
     float: right;
     display: flex;
+    background: #ffffff;
+    z-index:-2;
+    vertical-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.std-bkg
+{
     background: aqua;
+    height: 90%;
+    width:100%;
+    /*position:absolute;*/
 }
 
-#about__content {
-    /*top:100vh;*/
+.slide-panel
+{
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    display:flex;
+    background: rgb(255, 255, 255);
+    right: 35%;
+    box-shadow:  0.8vw  0 0.3vw -0.3vw rgba(100,100,100,0.3),
+                -0.8vw 0 0.3vw -0.3vw rgba(100,100,100,0.3);
 }
 
+#slide2 { right: 26.875%; }
+#slide3 { right: 18.75%; }
+#slide4 { right: 10.625%; }
+#slide5 { right: 2.5%; }
 
 /* END TITLE BAR STYLES*/
 
@@ -277,4 +301,11 @@ transform:rotate(-60deg);
     height: 10vmin;
     position: absolute;
     z-index: 10;
+}
+
+
+
+#bkg1
+{
+    background: url("images/cern-pano.jpg")
 }

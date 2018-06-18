@@ -1,0 +1,70 @@
+/*Hover Menu Styles:  */
+.hover-menu
+{
+    width: 6vmax;
+    height: 6vmax;
+    font-size: 1.5vmax;
+    text-align: center;
+    position: fixed;
+}
+
+.menu-circle-solid
+{
+    color: rgba(100,100,100,1);
+}
+
+.menu-circle-border
+{
+    color: rgba(220,220,220,1);
+}
+
+.menu-bars
+{
+    color: rgba(220,220,220,1);
+}
+
+.icon-group
+{
+    transition: all 0.5s;
+}
+
+#menu-btn1:hover #icon-group1
+{
+    transform: translate(20%,0);
+}
+
+/*Main title styles: */
+.title-block
+{
+    width: 100%;
+    height: 6vmax;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+h1,h2,h3
+{
+    font-family: Arial;
+    margin: 5px 0;
+}
+
+h2
+{
+    /*font-style: bold;*/
+}
+
+h3
+{
+    color: rgba(100,100,100,1);
+    font-style: italic;
+    font-size: 18px;
+}
+
+/*Blog entry styles:  */
+.blog-entry
+{
+    width:95%;
+    margin: 1% 2.5%;
+}
