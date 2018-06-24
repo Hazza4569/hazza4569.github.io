@@ -19,10 +19,10 @@ int main(int argc, char** argv) {
 	return 1;
     }
 
-    std::ifstream protoHtml("/Users/harry/WebstormProjects/blog/proto.html");
+    std::ifstream protoHtml("/Users/harry/WebstormProjects/hcooke/blog/proto.html");
     std::string strLine;
 
-    std::ofstream indexHtml("/Users/harry/WebstormProjects/blog/index.html");
+    std::ofstream indexHtml("/Users/harry/WebstormProjects/hcooke/blog/index.html");
     
     while (std::getline(protoHtml,strLine)) {
         if (strLine.substr(0,2) == "`!") 
@@ -39,7 +39,7 @@ std::string getBlogEntriesHtml(int numEntries) {
     std::stringstream strStream;
 
     for (int i = numEntries; i > 0; i--) {
-        std::ifstream rawEntry("/Users/harry/WebstormProjects/blog/resources/blog-entries/" + std::to_string(i) + ".txt");
+        std::ifstream rawEntry("/Users/harry/WebstormProjects/hcooke/blog/resources/blog-entries/" + std::to_string(i) + ".txt");
 	std::string strRead;
 	bool isImages(false);
 
