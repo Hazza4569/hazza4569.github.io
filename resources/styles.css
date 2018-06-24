@@ -68,6 +68,8 @@
     right: 35%;
     box-shadow:  0.8vw  0 0.3vw -0.3vw rgba(100,100,100,0.3),
                 -0.8vw 0 0.3vw -0.3vw rgba(100,100,100,0.3);
+
+    flex:wrap;
 }
 
 #slide2 { right: 26.875%; }
@@ -309,3 +311,34 @@ transform:rotate(-60deg);
 {
     background: url("images/cern-pano.jpg")
 }
+
+#bkg4
+{
+    background: url("images/lhc.jpg");
+    background-size: 100% 100%;
+}
+
+
+.page-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*flex: wrap;*/
+}
+
+.btn {
+    border-radius: 9px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #bd0000;
+    padding: 40px 40px 40px 40px;
+    border: solid #660000 2px;
+}
+
+.btn:hover {
+    background: #d60012;
+}
+
+
