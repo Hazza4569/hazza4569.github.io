@@ -1,0 +1,1 @@
+let ga = new GameAgent();

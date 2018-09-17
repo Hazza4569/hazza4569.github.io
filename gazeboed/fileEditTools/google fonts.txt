@@ -1,0 +1,3 @@
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Righteous', cursive;

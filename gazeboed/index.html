@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset=utf-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gazeboed v3 Start Page</title>
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="resource/bootstrap-4/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="resource/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Righteous|Crete+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+
+<body>
+<!--Borders-->
+<div class="hBorder top"></div>
+<div class="hBorder bottom"></div>
+<div class="vBorder left"></div>
+<div class="vBorder right"></div>
+
+<!-- title page -->
+<div id="logo"></div>
+<div id="title">
+    <span id='ttl1'>Let&#39;s Get</span>
+    <button class='mybtn1' id='ttl2' onclick="exitTitle()">GAZEBOED</button>
+</div>
+<div id="subtitle"></div>
+
+<!-- settings page -->
+<div id="settingstitle" style="display:none;">Players and Settings</div>
+<div id="settingsinput" style="display:none">
+    <div id="nameinputs">
+        <div id="textentry">
+            <input id="namesinput" class="textinput">
+            <button id="addname" class="mybtn1 settingsbutton" onclick="onAddClick()">Add</button>
+        </div>
+        <div id="namesboxcontainer">
+            <div id="namesbox">
+                <!--<div id="Harry" class="name topname">
+                    Harry
+                    <div class="closebutton">
+                        <i class="fas fa-times closeicon" onclick="iClick()"></i>
+                    </div>
+                </div>
+                <div id="Cress" class="name bottomname">Cress</div>-->
+            </div>
+        </div>
+    </div>
+    <div id="optionsdiv"><div id="optionsflex">
+        <!--<div class="settingoption" id = "tag"> This is an option.
+            <label class="switch">
+                <input type="checkbox" name="level_control">
+                <span class="slider"></span>
+            </label>
+        </div>-->
+    </div></div>
+</div>
+<div id="navigationbuttons" style="display:none;">
+    <button id="advancedbtn" class="mybtn1 settingsbutton">Advanced Settings</button>
+    <button id="startgamebtn" class="mybtn1 settingsbutton" onclick="startGame()">Start Game</button>
+</div>
+
+
+<!-- game page -->
+<div id="gametitle"></div>
+<div id="gamedesc"></div>
+<div id="rulebar"></div>
+
+<!-- jQueury -->
+<script src="resource/JQuery/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+</script>
+<!-- Bootstrap -->
+<script src = "resource/bootstrap-4/bootstrap.js"></script>
+<!--Harry's JS-->
+<script src = "resource/nouned.js"></script>
+<script src = "resource/setting.js"></script>
+<script src = "resource/settings.js"></script>
+<script src = "resource/instruction.js"></script>
+<script src = "resource/game.js"></script>
+<script src = "resource/page.js"></script>
+<script src = "resource/titlecanvas.js"></script>
+<script src = "resource/settingscanvas.js"></script>
+<script src = "resource/gamecanvas.js"></script>
+<script src = "resource/gameagent.js"></script>
+
+<!--games-->
+<script src = "resource/initialise.js"></script>
+<script src = "resource/games/fuzzyduck.js"></script>
+<script src = "resource/games/21.js"></script>
+<script src = "resource/games/gecko.js"></script>
+<script src = "resource/games/confession.js"></script>
+<script src = "resource/games/truthorshot.js"></script>
+<script src = "resource/games/slapcup.js"></script>
+<script src = "resource/games/whoami.js"></script>
+<script src = "resource/games/cheekypostit.js"></script>
+<script src = "resource/games/drinktionary.js"></script>
+<!-- --- -->
+
+<script src = "resource/main.js"></script>
+</body>

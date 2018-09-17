@@ -1,0 +1,247 @@
+body
+{
+	overflow: hidden;
+	background-color: #ffffff;
+}
+
+.hBorder, .vBorder, #navigationbuttons, #nameinputs
+{
+	position:absolute;
+}
+
+.hBorder {
+    transition: height .5s;
+}
+
+.vBorder { transition: width .5s; }
+
+#logo
+{
+	position: absolute;
+	left: 30vw;
+	top: 20vh;
+	width:230px;
+	/*height: 180px;*/
+	background-image:url(gazeboed.png);
+	background-size: 100%;
+}
+
+#title
+{
+	position: absolute;
+	display:block;
+	line-height:0.8;
+}
+
+#ttl1
+{
+	text-align: left;
+	font-family: 'Righteous', cursive;
+}
+
+#ttl2
+{
+	text-align:center;
+	font-family: 'Righteous', cursive;
+}
+
+.mybtn1
+{
+	padding:2px;
+	margin:0;
+	background-color:#ff2222;
+	color:green;
+	border:2px solid red;
+	border-radius: 8px;
+}
+
+.mybtn1:hover
+{
+	background-color:white;
+    color:green;
+}
+
+.settingsbutton
+{
+    font-family: 'Crete Round', sans-serif;
+    color:white;
+}
+
+.textinput
+{
+    border-radius: 8px;
+    font-family: 'Crete Round', sans-serif;
+}
+
+#subtitle, #gamedesc, #gametitle, #rulebar, #settingsinput
+{
+	position: absolute;
+	text-align:center;
+	word-wrap: break-word;
+	font-family: 'Crete Round', sans-serif;
+}
+
+#gametitle, #settingstitle
+{
+	font-family: 'Righteous', cursive;
+    position: absolute;
+    text-align: center;
+}
+
+#optionsdiv
+{
+    position: absolute;
+    overflow-y: scroll;
+}
+
+#optionsflex
+{
+    width: 100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+#namesboxcontainer
+{
+    position: absolute;
+    /*border: 1px solid red;*/
+    overflow-y: scroll;
+}
+
+#namesbox
+{
+    /*border-radius: 8px;*/
+    /*border: 1px solid black;*/
+    overflow-y: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    /*flex-wrap: wrap-reverse;*/
+    /*align-items: flex-end;*/
+    /*justify-items: flex-start;*/
+}
+
+.name
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*border: 2px solid grey;*/
+    /*border-top: none;*/
+}
+
+.topname
+{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /*border-top:2px solid grey;*/
+}
+
+.bottomname
+{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.closebutton
+{
+    display: flex;
+    position: absolute;
+    align-self: center;
+    color:grey;
+}
+
+.closeicon:hover
+{
+    cursor: pointer;
+}
+
+/*#names*/
+/*{*/
+    /*width:100%;*/
+    /*height:100%;*/
+    /*overflow-y:scroll*/
+    /*border:2px solid red*/
+/*}*/
+
+.settingoption
+{
+    /*position:absolute;*/
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 14px;
+}
+
+.settingoption:hover
+{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.settingoption .switch
+{
+    /*display: flex;*/
+    /*float: right;*/
+    /*align-self: end;*/
+}
+
+/*=========SLIDERS:========*/
+.switch {
+    position: absolute;
+    display: inline-block;
+    margin:0
+    /*width: 3.5em;*/
+    /*height: 2em;*/
+    /*margin: 0 0 0 10px;*/
+}
+
+.switch input {display:none;}
+/* Hide default HTML checkbox */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .5s;
+    transition: .5s;
+    /*border-radius: 10px; !*remove for square*!*/
+    display: flex;
+    align-items: center;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    /*height: 1.8em;*/
+    /*width: 1.8em;*/
+    /*left: 0.8px;*/
+    background-color: white;
+    -webkit-transition: .5s;
+    transition: .5s;
+    border-radius: 50%; /*remove for square*/
+    /*-moz-box-shadow: -0.1px 1px rgba(0,0,0,0.3);*/
+    /*-webkit-box-shadow: -0.1px 1px rgba(0,0,0,0.3);*/
+    /*-o-box-shadow: -0.1px 1px rgba(0,0,0,0.3);*/
+    /*box-shadow: -0.1px 1px rgba(0,0,0,0.3);*/
+}
+
+/*input:checked + .slider {*/
+    /*background-color: #2196F3;*/
+/*}*/
+
+/*input:focus + .slider {*/
+    /*box-shadow: 0 0 1px #2196F3;*/
+/*}*/
+
+/*input:checked + .slider:before {*/
+    /*-webkit-transform: translateX(15.7px);*/
+    /*-ms-transform: translateX(15.7px);*/
+    /*transform: translateX(15.7px);*/
+}
+/*=======END SLIDERS======*/

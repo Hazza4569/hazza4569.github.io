@@ -1,0 +1,54 @@
+- add a close method to each of the canvases. Then can call close on the canvas before setting a new one...
+  possibly at the beginning of the SetCanvas method.
+- Can have a colour scheme class to use as a return value to set colours without complicating access.
+- Possibly create a layout class to store values related to position. Can be used to arrange items on screen
+  for a variety of different canvas types.
+- Need to make player entry and settings screen(s).
+- Can have both a game class and an Instruction class:
+   - Game is the prototype for an instruction, and marks positions where random player names will be
+   - Can have a folder full of js files, one for each game, which defines the game and all its properties and
+     tags and then adds it to an array of games. Can iterate over this array to define which are active dependent
+     on the chosen settings
+   - Games could have minimum (and maximum ?) numbers of players. Could be handled by a method which is passed the
+     current number of players and returns true or false!!
+   - An Instruction is created from a game and the player list. Can be inserted into an array (or queue?) which
+     stores recent history to enable going backwards.
+
+
+- Need to work out a way of maintaining same random list for both GetTitle and GetDescription in Game class.
+  Probably need to just get both at the same time?
+- Maybe optimise by only randomising names needed... don't need to shuffle entire list.
+
+Game Settings:
+- equipment
+  - cups
+  - ping pong balls
+  - cards (?)
+  - paper/pen
+- options
+  - dirty pint
+  - tabletop mode
+  - fast mode
+  - shots
+  - automated categories
+  - rush games
+  - no thinking
+  - team games
+
+  Do a hover description for each of the settings.
+
+  can include more games from ring of fire ? thumbmaster, questionmaster, you drink(?), waterfall, rhyme
+
+TODO (before alpha release)
+=============================
+ - Add rules to instruction display
+ - Add categories and never have I ever preset functionality
+ - colours for 21
+
+TODO (after working version)
+=============================
+ - Split settings into equipment and options. Two different flex divs with little titles at the top.
+ - Add documentation for settings and games.
+ - Add settings button to game screen.
+ - Add dirty pint functionality to Game Agent.
+ - Download online dependencies (eternalise)
