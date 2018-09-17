@@ -4,6 +4,14 @@ body
 	background-color: #ffffff;
 }
 
+/* remove ugly focus on chrome/safari */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .hBorder, .vBorder, #navigationbuttons, #nameinputs
 {
 	position:absolute;
@@ -245,3 +253,4 @@ body
     /*transform: translateX(15.7px);*/
 }
 /*=======END SLIDERS======*/
+
