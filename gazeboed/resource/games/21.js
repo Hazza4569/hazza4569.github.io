@@ -15,7 +15,7 @@ ga.games.push( new Game(
     "then play changes direction, and if somebody says three numbers the next player is skipped.",
 
     //COLOURS (foreground, background):
-    "blue", "red",
+    "chocolate", "dodgerblue",
 
     //REQUIRED SETTINGS:
     [],

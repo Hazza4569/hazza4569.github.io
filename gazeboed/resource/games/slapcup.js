@@ -17,7 +17,7 @@ ga.games.push( new Game(
     "the way before they get their ball in. The loser with the slapped cup has to drink.",
 
     //COLOURS (foreground, background):
-    "red", "red",
+    "peru", "red",
 
     //REQUIRED SETTINGS:
     ["cups","ppballs","tabletop"],
