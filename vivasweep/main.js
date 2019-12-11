@@ -70,7 +70,7 @@ function startTime()
     let done=false;
     let thistime = new Date(duration.getTime()); //weird unnecessary variable, trying to solve a synchro error
     let currentbin=getPerson(thistime);
-    let nexttime = new Date(duration.getTime() + 5*60*1000)
+    let nexttime = new Date(thistime.getTime() + 5*60*1000)
     let nextbin = getPerson(nexttime);
     let persondiv = document.getElementById('person') 
     if (finished)
