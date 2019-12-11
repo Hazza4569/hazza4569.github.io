@@ -6,55 +6,39 @@
 	<meta name="viewport" content="width-device-width, initial-scale=1">
 
 	<title>Viva Sweepstake</title>
+<style type="text/css">
+#time {
+    font-size: 70px;
+    font-family: courier new;
+    border-radius: 10px;
+    border: 6px solid red;
+    padding: 17px 20px 10px 20px;
+    margin: 15px 10px;
+    background-color: lightblue;
+}
+body {
+    text-align: center;
+    font-family: helvetica;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+#person {
+    width: 600px;
+}
+
+        
+</style>
 </head>
 
 <body onload="startTime()">
 	<!-- Objects to draw -->
+    <div id="general"> </div>
     <div id="time"> </div>
     <div id="person"> </div>
-	<script src =s "template.js"></script>
-    <script type="text/javascript">
-    let slots = [];
-    let people = [];
-    slots.push(4.05); people.push('Patrick Knights')
-    slots.push(4.10); people.push('Alasdair Winter')
-    slots.push(4.15); people.push('Robert Ward')
-    slots.push(4.20); people.push('Govind Virdee')
-    slots.push(4.25); people.push('Harry Cooke')
-    function startTime()
-    {
-        var start = new Date('06 Nov 2019 14:25:37 GMT')
-        var now = new Date();
-        var duration = new Date(now.getTime() - start.getTime());
-        var h=duration.getHours()
-        var m=duration.getMinutes()
-        var s=duration.getSeconds()
-        // add a zero in front of numbers<10
-        document.getElementById('time').innerHTML=cT(h)+":"+cT(m)+":"+cT(s);
-
-        //get person
-        let done=false;
-        for (let i =0; i < slots.length; i++)
-        {
-            let slot_h = Math.floor(slots[i]);
-            let slot_m = (slots[i] - slot_h) * 100;
-            if (h != slot_h) continue;
-            if (m < slot_m || m > slot_m + 5) continue;
-            document.getElementById('person').innerHTML=people[i];
-            done = true;
-        }
-        if (!done) document.getElementById('person').innerHTML='Empty'
-
-        t=setTimeout('startTime()',500);
-    }
-    function cT(i)
-    {
-        if (i<10)
-        {
-            i="0" + i;
-        }
-        return i;
-    }
+    <script src="main.js" type="text/javascript">
     </script>
 </body>
 
