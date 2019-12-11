@@ -42,7 +42,7 @@ function getPerson(time)
 function startTime()
 {
     //Set time:
-    let start = new Date('11 Dec 2019 13:30:00 GMT');
+    let start = new Date('11 Dec 2019 13:30:19 GMT');
     let stop = new Date('11 Dec 2019 23:00:00 GMT');
     let now = new Date();
     let duration = new Date(now.getTime() - start.getTime() - 3600*1000);
