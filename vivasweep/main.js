@@ -1,5 +1,8 @@
 let slots = [];
 let people = [];
+slots.push(2.40); people.push('(illegible)');
+slots.push(2.50); people.push('(illegible)');
+slots.push(2.55); people.push('DL');
 slots.push(3.00); people.push('AW');
 slots.push(3.05); people.push('AF');
 slots.push(3.10); people.push('RW');
@@ -21,6 +24,8 @@ slots.push(4.25); people.push('PS');
 slots.push(4.30); people.push('TB');
 slots.push(4.35); people.push('JL');
 slots.push(4.40); people.push('PN');
+slots.push(4.45); people.push('DB');
+slots.push(4.50); people.push('(illegible)');
 slots.push(6.15); people.push('JB');
 function getPerson(time)
 {
