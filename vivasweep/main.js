@@ -48,12 +48,12 @@ function startTime()
 {
     //Set time:
     let start = new Date('11 Dec 2019 13:30:19 GMT');
-    let stop = new Date('11 Dec 2019 23:00:00 GMT');
+    let stop = new Date('11 Dec 2019 18:03:19 GMT');
     let now = new Date();
     let duration = new Date(now.getTime() - start.getTime() - 3600*1000);
     let negative = duration.getTime() + 3600*1000 < 0
     let finished = now.getTime() - stop.getTime() > 0
-    if (finished) duration = stop;
+    if (finished) duration = new Date(stop.getTime() - start.getTime() - 3600*1000);
     else if (negative) duration = new Date(start.getTime() - now.getTime() - 3600*1000);
     let h=duration.getHours()
     let m=duration.getMinutes()
