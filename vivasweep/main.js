@@ -1,32 +1,33 @@
 let slots = [];
 let people = [];
-slots.push(2.40); people.push('(illegible)');
-slots.push(2.50); people.push('(illegible)');
-slots.push(2.55); people.push('DL');
-slots.push(3.00); people.push('AW');
-slots.push(3.05); people.push('AF');
-slots.push(3.10); people.push('RW');
-slots.push(3.15); people.push('RV');
-slots.push(3.20); people.push('RT');
-slots.push(3.25); people.push('ADC');
-slots.push(3.30); people.push('GB');
-slots.push(3.35); people.push('RB');
-slots.push(3.40); people.push('PK');
-slots.push(3.45); people.push('JK');
-slots.push(3.50); people.push('ER');
-slots.push(3.55); people.push('HC');
-slots.push(4.00); people.push('JP');
-slots.push(4.05); people.push('RC');
-slots.push(4.10); people.push('JS');
-slots.push(4.15); people.push('GV');
-slots.push(4.20); people.push('REO');
-slots.push(4.25); people.push('PS');
-slots.push(4.30); people.push('TB');
-slots.push(4.35); people.push('JL');
-slots.push(4.40); people.push('PN');
-slots.push(4.45); people.push('DB');
-slots.push(4.50); people.push('(illegible)');
-slots.push(6.15); people.push('JB');
+slots.push(2.35); people.push("AA");
+slots.push(2.40); people.push("PRN");
+slots.push(2.45); people.push("MGG");
+slots.push(2.50); people.push("NKW");
+slots.push(2.55); people.push("DL");
+slots.push(3.00); people.push("DGC");
+slots.push(3.05); people.push("PNS");
+slots.push(3.10); people.push("JS");
+slots.push(3.15); people.push("JDL");
+slots.push(3.20); people.push("ATW");
+slots.push(3.25); people.push("TWB");
+slots.push(3.30); people.push("RB");
+slots.push(3.35); people.push("HC");
+slots.push(3.40); people.push("ET");
+slots.push(3.45); people.push("AH");
+slots.push(3.50); people.push("JHB");
+slots.push(3.55); people.push("RJW");
+slots.push(4.00); people.push("AW");
+slots.push(4.05); people.push("RJT");
+slots.push(4.10); people.push("AW2.0EB");
+slots.push(4.15); people.push("AW3.0EB");
+slots.push(4.20); people.push("AF");
+slots.push(4.25); people.push("DJDT");
+slots.push(4.30); people.push("SP");
+slots.push(4.35); people.push("DB");
+slots.push(4.40); people.push("GSV");
+slots.push(4.45); people.push("JK");
+slots.push(4.50); people.push("JHL");
 function getPerson(time)
 {
     h = time.getHours()
@@ -47,8 +48,8 @@ function getPerson(time)
 function startTime()
 {
     //Set time:
-    let start = new Date('11 Dec 2019 13:30:19 GMT');
-    let stop = new Date('11 Dec 2019 18:03:19 GMT');
+    let start = new Date('12 Oct 2022 11:57:00 GMT');
+    let stop = new Date('12 Oct 2022 11:56:00 GMT');
     let now = new Date();
     let duration = new Date(now.getTime() - start.getTime() - 3600*1000);
     let negative = duration.getTime() + 3600*1000 < 0
