@@ -39,7 +39,7 @@ function getPerson(time)
         let slot_m = Math.round((slots[i] - slot_h) * 100);
         //console.log(slot_h, slot_m);
         if (h != slot_h) continue;
-        if (m < slot_m || m > slot_m + 5) continue;
+        if (m < slot_m || m >= slot_m + 5) continue;
         return people[i]; 
     }
     return ""
