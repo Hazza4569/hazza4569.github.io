@@ -27,7 +27,7 @@ slots.push(4.35); people.push("JFM");
 slots.push(4.40); people.push("blank");
 slots.push(4.45); people.push("MJM");
 slots.push(4.50); people.push("blank");
-slots.push(4.55); people.push("blank");
+slots.push(4.55); people.push("JHL");
 slots.push(5.00); people.push("PNS");
 slots.push(5.05); people.push("blank");
 slots.push(5.10); people.push("blank");
