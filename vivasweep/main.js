@@ -1,33 +1,40 @@
 let slots = [];
 let people = [];
-slots.push(2.35); people.push("AA");
-slots.push(2.40); people.push("PRN");
-slots.push(2.45); people.push("MGG");
-slots.push(2.50); people.push("NKW");
-slots.push(2.55); people.push("DL");
-slots.push(3.00); people.push("DGC");
-slots.push(3.05); people.push("PNS");
-slots.push(3.10); people.push("JS");
-slots.push(3.15); people.push("JDL");
-slots.push(3.20); people.push("ATW");
-slots.push(3.25); people.push("TWB");
-slots.push(3.30); people.push("RB");
-slots.push(3.35); people.push("HC");
-slots.push(3.40); people.push("ET");
-slots.push(3.45); people.push("AH");
-slots.push(3.50); people.push("JHB");
-slots.push(3.55); people.push("RJW");
-slots.push(4.00); people.push("AW");
-slots.push(4.05); people.push("RJT");
-slots.push(4.10); people.push("AW2.0EB");
-slots.push(4.15); people.push("AW3.0EB");
-slots.push(4.20); people.push("AF");
-slots.push(4.25); people.push("DJDT");
-slots.push(4.30); people.push("SP");
-slots.push(4.35); people.push("DB");
-slots.push(4.40); people.push("GSV");
-slots.push(4.45); people.push("JK");
-slots.push(4.50); people.push("JHL");
+slots.push(2.40); people.push("DGC");
+slots.push(2.45); people.push("blank");
+slots.push(2.50); people.push("blank");
+slots.push(2.55); people.push("blank");
+slots.push(3.00); people.push("blank");
+slots.push(3.05); people.push("blank");
+slots.push(3.10); people.push("blank");
+slots.push(3.15); people.push("AA");
+slots.push(3.20); people.push("blank");
+slots.push(3.25); people.push("JS");
+slots.push(3.30); people.push("TWB");
+slots.push(3.35); people.push("WG");
+slots.push(3.40); people.push("JDL");
+slots.push(3.45); people.push("PRN");
+slots.push(3.50); people.push("AW");
+slots.push(3.55); people.push("MM");
+slots.push(4.00); people.push("HC");
+slots.push(4.05); people.push("DJB");
+slots.push(4.10); people.push("RJW");
+slots.push(4.15); people.push("NS");
+slots.push(4.20); people.push("AMMJdC");
+slots.push(4.25); people.push("JH");
+slots.push(4.30); people.push("blank");
+slots.push(4.35); people.push("JFM");
+slots.push(4.40); people.push("blank");
+slots.push(4.45); people.push("MJM");
+slots.push(4.50); people.push("blank");
+slots.push(4.55); people.push("blank");
+slots.push(5.00); people.push("PNS");
+slots.push(5.05); people.push("blank");
+slots.push(5.10); people.push("blank");
+slots.push(5.15); people.push("blank");
+slots.push(5.20); people.push("blank");
+slots.push(5.25); people.push("blank");
+slots.push(5.30); people.push("NKW");
 function getPerson(time)
 {
     h = time.getHours()
@@ -48,8 +55,8 @@ function getPerson(time)
 function startTime()
 {
     //Set time:
-    let start = new Date('12 Oct 2022 10:57:00 GMT');
-    let stop = new Date('12 Oct 2022 15:28:40 GMT');
+    let start = new Date('03 Nov 2022 14:00:00 GMT');
+    let stop =  new Date('');//'03 Oct 2022 21:00:00 GMT');
     let now = new Date();
     let duration = new Date(now.getTime() - start.getTime() - 3600*1000);
     let negative = duration.getTime() + 3600*1000 < 0
