@@ -71,7 +71,7 @@ function startTime()
     //set general notice:
     let general = document.getElementById('general')
     if (finished) general.innerHTML = "The viva has finished!<br>The final time was"
-    else if (negative) general.innerHTML = "The viva will begin in..."
+    else if (negative) general.innerHTML = "Good luck Tom!<br>The viva will begin in..."
     else general.innerHTML = "The viva has been going for"
 
     //get person
@@ -86,7 +86,7 @@ function startTime()
         if (currentbin!="") persondiv.innerHTML = "The winner was "+currentbin+"!";
         else persondiv.innerHTML = "Unfortunately nobody claimed this bin! There's no winner this time..."
     }
-    else if (negative) persondiv.innerHTML = "Get your guesses in now! Visit the ATLAS student office or email russelljamesturner@gmail.com to claim your bin."
+    else if (negative) persondiv.innerHTML = "Get your guesses in now! Visit the ATLAS student office or email robert.james.ward@cern.ch to claim your bin."
     else
     {
         persondiv.innerHTML = "Current bin: " +
