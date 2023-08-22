@@ -1,0 +1,3 @@
+[submodule "web-portfolio"]
+	path = web-portfolio
+	url = git@github.com:Hazza4569/web-portfolio.git
